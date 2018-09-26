@@ -36,6 +36,13 @@ namespace Plano_ensino.FORMS
             }
         }
 
+        private void carrega_tabela()
+        {
+            DataSet ds = Comp_CurricularDAL.atualizaTabela();
+            tabela.DataSource = ds;
+            tabela.DataMember = ds.Tables[0].TableName;
+        }
+
         private void carrega_combo()
         {
             DataTable dtTabelas = Comp_CurricularDAL.atualiza_combo();
@@ -49,6 +56,7 @@ namespace Plano_ensino.FORMS
         private void FormCOMP_CURRICULAR_Load(object sender, EventArgs e)
         {
             this.carrega_combo();
+            this.carrega_tabela();
         }
 
         private void label6_Click(object sender, EventArgs e)
