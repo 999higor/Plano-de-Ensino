@@ -11,3 +11,16 @@ D:\higor\Documents\Visual Studio 2017\Projects\Plano_ensino\Plano_ensino\obj\Deb
 D:\higor\Documents\Visual Studio 2017\Projects\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormPROFESSOR.resources
 D:\higor\Documents\Visual Studio 2017\Projects\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormCOMP_CURRICULAR.resources
 D:\higor\Documents\Visual Studio 2017\Projects\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csprojAssemblyReference.cache
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\bin\Debug\Plano_ensino.exe.config
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\bin\Debug\Plano_ensino.exe
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\bin\Debug\Plano_ensino.pdb
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csprojAssemblyReference.cache
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormCOMP_CURRICULAR.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormCURSO.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.Form1.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormPROFESSOR.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.Properties.Resources.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csproj.GenerateResource.cache
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csproj.CoreCompileInputs.cache
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.exe
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.pdb
