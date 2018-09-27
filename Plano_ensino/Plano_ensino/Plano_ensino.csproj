@@ -67,6 +67,12 @@
     <Compile Include="FORMS\FormMENU.Designer.cs">
       <DependentUpon>FormMENU.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\FormPLANO_ENSINO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\FormPLANO_ENSINO.Designer.cs">
+      <DependentUpon>FormPLANO_ENSINO.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\FormPROFESSOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FormMENU.resx">
       <DependentUpon>FormMENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\FormPLANO_ENSINO.resx">
+      <DependentUpon>FormPLANO_ENSINO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\FormPROFESSOR.resx">
       <DependentUpon>FormPROFESSOR.cs</DependentUpon>
