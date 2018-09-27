@@ -47,19 +47,20 @@
             this.tabela.AllowUserToAddRows = false;
             this.tabela.AllowUserToDeleteRows = false;
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabela.Location = new System.Drawing.Point(240, 50);
+            this.tabela.Location = new System.Drawing.Point(248, 57);
             this.tabela.Name = "tabela";
             this.tabela.ReadOnly = true;
             this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabela.Size = new System.Drawing.Size(292, 306);
+            this.tabela.Size = new System.Drawing.Size(383, 306);
             this.tabela.TabIndex = 0;
             this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
             // 
             // btSALVAR
             // 
-            this.btSALVAR.Location = new System.Drawing.Point(52, 205);
+            this.btSALVAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSALVAR.Location = new System.Drawing.Point(52, 198);
             this.btSALVAR.Name = "btSALVAR";
-            this.btSALVAR.Size = new System.Drawing.Size(117, 23);
+            this.btSALVAR.Size = new System.Drawing.Size(117, 30);
             this.btSALVAR.TabIndex = 1;
             this.btSALVAR.Text = "Salvar";
             this.btSALVAR.UseVisualStyleBackColor = true;
@@ -67,9 +68,10 @@
             // 
             // btNOVO
             // 
-            this.btNOVO.Location = new System.Drawing.Point(52, 249);
+            this.btNOVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNOVO.Location = new System.Drawing.Point(52, 242);
             this.btNOVO.Name = "btNOVO";
-            this.btNOVO.Size = new System.Drawing.Size(117, 23);
+            this.btNOVO.Size = new System.Drawing.Size(117, 30);
             this.btNOVO.TabIndex = 2;
             this.btNOVO.Text = "Novo";
             this.btNOVO.UseVisualStyleBackColor = true;
@@ -77,9 +79,10 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(52, 292);
+            this.btAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAlterar.Location = new System.Drawing.Point(52, 285);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(117, 23);
+            this.btAlterar.Size = new System.Drawing.Size(117, 30);
             this.btAlterar.TabIndex = 3;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // 
             // btEXCLUIR
             // 
-            this.btEXCLUIR.Location = new System.Drawing.Point(52, 333);
+            this.btEXCLUIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEXCLUIR.Location = new System.Drawing.Point(52, 326);
             this.btEXCLUIR.Name = "btEXCLUIR";
-            this.btEXCLUIR.Size = new System.Drawing.Size(117, 23);
+            this.btEXCLUIR.Size = new System.Drawing.Size(117, 30);
             this.btEXCLUIR.TabIndex = 4;
             this.btEXCLUIR.Text = "Excluir";
             this.btEXCLUIR.UseVisualStyleBackColor = true;
@@ -98,48 +102,54 @@
             // tbIDPROFESSOR
             // 
             this.tbIDPROFESSOR.Enabled = false;
-            this.tbIDPROFESSOR.Location = new System.Drawing.Point(50, 12);
+            this.tbIDPROFESSOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIDPROFESSOR.Location = new System.Drawing.Point(13, 29);
             this.tbIDPROFESSOR.Name = "tbIDPROFESSOR";
-            this.tbIDPROFESSOR.Size = new System.Drawing.Size(100, 20);
+            this.tbIDPROFESSOR.Size = new System.Drawing.Size(208, 24);
             this.tbIDPROFESSOR.TabIndex = 5;
             // 
             // tbNOME
             // 
-            this.tbNOME.Location = new System.Drawing.Point(50, 58);
+            this.tbNOME.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNOME.Location = new System.Drawing.Point(13, 81);
             this.tbNOME.Name = "tbNOME";
-            this.tbNOME.Size = new System.Drawing.Size(164, 20);
+            this.tbNOME.Size = new System.Drawing.Size(208, 24);
             this.tbNOME.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 7;
-            this.label1.Text = "ID";
+            this.label1.Text = "SEAP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(9, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nome";
             // 
             // tbPESQUISA
             // 
-            this.tbPESQUISA.Location = new System.Drawing.Point(240, 12);
+            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPESQUISA.Location = new System.Drawing.Point(263, 19);
             this.tbPESQUISA.Name = "tbPESQUISA";
-            this.tbPESQUISA.Size = new System.Drawing.Size(223, 20);
+            this.tbPESQUISA.Size = new System.Drawing.Size(245, 24);
             this.tbPESQUISA.TabIndex = 9;
             // 
             // btPESQUISAR
             // 
-            this.btPESQUISAR.Location = new System.Drawing.Point(485, 12);
+            this.btPESQUISAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPESQUISAR.Location = new System.Drawing.Point(514, 12);
             this.btPESQUISAR.Name = "btPESQUISAR";
-            this.btPESQUISAR.Size = new System.Drawing.Size(95, 23);
+            this.btPESQUISAR.Size = new System.Drawing.Size(117, 39);
             this.btPESQUISAR.TabIndex = 10;
             this.btPESQUISAR.Text = "Pesquisar";
             this.btPESQUISAR.UseVisualStyleBackColor = true;
@@ -149,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 375);
+            this.ClientSize = new System.Drawing.Size(653, 375);
             this.Controls.Add(this.btPESQUISAR);
             this.Controls.Add(this.tbPESQUISA);
             this.Controls.Add(this.label2);

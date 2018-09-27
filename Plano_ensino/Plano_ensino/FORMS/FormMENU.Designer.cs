@@ -42,7 +42,7 @@
             this.cadastrarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -52,28 +52,29 @@
             this.cursoToolStripMenuItem,
             this.professorToolStripMenuItem,
             this.componenteCurricularToolStripMenuItem});
+            this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // cursoToolStripMenuItem
             // 
             this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
-            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.cursoToolStripMenuItem.Text = "Curso";
             this.cursoToolStripMenuItem.Click += new System.EventHandler(this.cursoToolStripMenuItem_Click);
             // 
             // professorToolStripMenuItem
             // 
             this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
-            this.professorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.professorToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.professorToolStripMenuItem.Text = "Professor";
             this.professorToolStripMenuItem.Click += new System.EventHandler(this.professorToolStripMenuItem_Click);
             // 
             // componenteCurricularToolStripMenuItem
             // 
             this.componenteCurricularToolStripMenuItem.Name = "componenteCurricularToolStripMenuItem";
-            this.componenteCurricularToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.componenteCurricularToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.componenteCurricularToolStripMenuItem.Text = "Componente Curricular";
             this.componenteCurricularToolStripMenuItem.Click += new System.EventHandler(this.componenteCurricularToolStripMenuItem_Click);
             // 

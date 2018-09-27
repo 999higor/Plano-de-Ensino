@@ -47,34 +47,34 @@
             // tbIDCURSO
             // 
             this.tbIDCURSO.Enabled = false;
-            this.tbIDCURSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIDCURSO.Location = new System.Drawing.Point(69, 21);
+            this.tbIDCURSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIDCURSO.Location = new System.Drawing.Point(12, 44);
             this.tbIDCURSO.Name = "tbIDCURSO";
-            this.tbIDCURSO.Size = new System.Drawing.Size(179, 26);
+            this.tbIDCURSO.Size = new System.Drawing.Size(179, 24);
             this.tbIDCURSO.TabIndex = 0;
             // 
             // tbOBJETIVO
             // 
-            this.tbOBJETIVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOBJETIVO.Location = new System.Drawing.Point(69, 100);
+            this.tbOBJETIVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOBJETIVO.Location = new System.Drawing.Point(12, 148);
             this.tbOBJETIVO.Multiline = true;
             this.tbOBJETIVO.Name = "tbOBJETIVO";
-            this.tbOBJETIVO.Size = new System.Drawing.Size(331, 199);
+            this.tbOBJETIVO.Size = new System.Drawing.Size(421, 199);
             this.tbOBJETIVO.TabIndex = 1;
             // 
             // tbNOME
             // 
-            this.tbNOME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNOME.Location = new System.Drawing.Point(69, 59);
+            this.tbNOME.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNOME.Location = new System.Drawing.Point(12, 96);
             this.tbNOME.Name = "tbNOME";
-            this.tbNOME.Size = new System.Drawing.Size(331, 26);
+            this.tbNOME.Size = new System.Drawing.Size(421, 24);
             this.tbNOME.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 24);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 20);
             this.label1.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 59);
+            this.label2.Location = new System.Drawing.Point(8, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 100);
+            this.label3.Location = new System.Drawing.Point(8, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 20);
             this.label3.TabIndex = 5;
@@ -103,9 +103,9 @@
             // btSALVAR
             // 
             this.btSALVAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSALVAR.Location = new System.Drawing.Point(69, 316);
+            this.btSALVAR.Location = new System.Drawing.Point(54, 372);
             this.btSALVAR.Name = "btSALVAR";
-            this.btSALVAR.Size = new System.Drawing.Size(137, 28);
+            this.btSALVAR.Size = new System.Drawing.Size(137, 30);
             this.btSALVAR.TabIndex = 6;
             this.btSALVAR.Text = "Salvar";
             this.btSALVAR.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // btNOVO
             // 
             this.btNOVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNOVO.Location = new System.Drawing.Point(243, 316);
+            this.btNOVO.Location = new System.Drawing.Point(228, 372);
             this.btNOVO.Name = "btNOVO";
-            this.btNOVO.Size = new System.Drawing.Size(136, 28);
+            this.btNOVO.Size = new System.Drawing.Size(136, 30);
             this.btNOVO.TabIndex = 7;
             this.btNOVO.Text = "Novo";
             this.btNOVO.UseVisualStyleBackColor = true;
@@ -125,9 +125,9 @@
             // btALTERAR
             // 
             this.btALTERAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btALTERAR.Location = new System.Drawing.Point(243, 359);
+            this.btALTERAR.Location = new System.Drawing.Point(228, 415);
             this.btALTERAR.Name = "btALTERAR";
-            this.btALTERAR.Size = new System.Drawing.Size(136, 28);
+            this.btALTERAR.Size = new System.Drawing.Size(136, 30);
             this.btALTERAR.TabIndex = 8;
             this.btALTERAR.Text = "Alterar";
             this.btALTERAR.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // btEXCLUIR
             // 
             this.btEXCLUIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEXCLUIR.Location = new System.Drawing.Point(69, 359);
+            this.btEXCLUIR.Location = new System.Drawing.Point(54, 415);
             this.btEXCLUIR.Name = "btEXCLUIR";
-            this.btEXCLUIR.Size = new System.Drawing.Size(137, 28);
+            this.btEXCLUIR.Size = new System.Drawing.Size(137, 30);
             this.btEXCLUIR.TabIndex = 9;
             this.btEXCLUIR.Text = "Excluir";
             this.btEXCLUIR.UseVisualStyleBackColor = true;
@@ -153,22 +153,22 @@
             this.tabela.Name = "tabela";
             this.tabela.ReadOnly = true;
             this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabela.Size = new System.Drawing.Size(425, 320);
+            this.tabela.Size = new System.Drawing.Size(572, 320);
             this.tabela.TabIndex = 10;
             this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
             // 
             // tbPESQUISA
             // 
-            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPESQUISA.Location = new System.Drawing.Point(439, 26);
             this.tbPESQUISA.Name = "tbPESQUISA";
-            this.tbPESQUISA.Size = new System.Drawing.Size(249, 26);
+            this.tbPESQUISA.Size = new System.Drawing.Size(412, 24);
             this.tbPESQUISA.TabIndex = 11;
             // 
             // btPESQUISAR
             // 
             this.btPESQUISAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPESQUISAR.Location = new System.Drawing.Point(710, 21);
+            this.btPESQUISAR.Location = new System.Drawing.Point(857, 21);
             this.btPESQUISAR.Name = "btPESQUISAR";
             this.btPESQUISAR.Size = new System.Drawing.Size(154, 35);
             this.btPESQUISAR.TabIndex = 12;
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 397);
+            this.ClientSize = new System.Drawing.Size(1023, 474);
             this.Controls.Add(this.btPESQUISAR);
             this.Controls.Add(this.tbPESQUISA);
             this.Controls.Add(this.tabela);

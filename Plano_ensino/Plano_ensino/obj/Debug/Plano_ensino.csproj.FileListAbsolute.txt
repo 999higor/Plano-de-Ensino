@@ -24,3 +24,6 @@ D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Pl
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csproj.CoreCompileInputs.cache
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.exe
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.pdb
+C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\bin\Debug\Plano_ensino.exe.config
+C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.exe
+C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.pdb
