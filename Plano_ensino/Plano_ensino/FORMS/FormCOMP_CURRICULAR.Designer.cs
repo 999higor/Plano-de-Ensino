@@ -56,7 +56,7 @@
             this.btNOVO = new System.Windows.Forms.Button();
             this.btALTERAR = new System.Windows.Forms.Button();
             this.btEXCLUIR = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabela = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
@@ -325,13 +325,13 @@
             this.btEXCLUIR.Text = "Excluir";
             this.btEXCLUIR.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 24);
-            this.textBox1.TabIndex = 28;
+            this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbID.Location = new System.Drawing.Point(12, 32);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(131, 24);
+            this.tbID.TabIndex = 28;
             // 
             // label13
             // 
@@ -355,10 +355,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 629);
+            this.ClientSize = new System.Drawing.Size(1370, 629);
             this.Controls.Add(this.tabela);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.btEXCLUIR);
             this.Controls.Add(this.btALTERAR);
             this.Controls.Add(this.btNOVO);
@@ -426,7 +426,7 @@
         private System.Windows.Forms.Button btNOVO;
         private System.Windows.Forms.Button btALTERAR;
         private System.Windows.Forms.Button btEXCLUIR;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView tabela;
     }

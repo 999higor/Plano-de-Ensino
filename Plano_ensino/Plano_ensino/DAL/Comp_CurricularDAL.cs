@@ -10,7 +10,9 @@ namespace Plano_ensino.DAL
 {
     class Comp_CurricularDAL
     {
-        static string strConnection = @"Data Source=HIGOR\SQLEXPRESS;Initial Catalog=PlanoDeEnsino;Integrated Security=True;Pooling=False";
+        //static string strConnection = @"Data Source=HIGOR\SQLEXPRESS;Initial Catalog=PlanoDeEnsino;Integrated Security=True;Pooling=False";
+
+        static string strConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\higor\Documents\GitHub\Plano-de-Ensino\banco de dados\BD_PlanoEnsino.mdf';Integrated Security=True;Connect Timeout=30";
 
         public static int Inserir(string nome, int semestre, string objetivo, string modalidade_oferta, string ementa, string referencias_basicas, string referencias_complementares, int hora_aula_distancia, int hora_aula_presencial, int hora_relogio_distancia, int hora_relogio_presencial, int codigo_curso)
         {
