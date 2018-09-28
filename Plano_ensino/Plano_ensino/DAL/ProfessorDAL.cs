@@ -14,10 +14,10 @@ namespace Plano_ensino.DAL
 
         static string strConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\higor\Documents\GitHub\Plano-de-Ensino\banco de dados\BD_PlanoEnsino.mdf';Integrated Security=True;Connect Timeout=30";
 
-        public static int Inserir(string pnome)
+        public static int Inserir(string pnome, int crm)
         {
             //texto com o comando que sera executado
-            string cmd = "Insert into Professor (nome) values (@nome)";
+            string cmd = "Insert into Professor (nome ,IdProfessor) values (@nome ,@id)";
             int res = 0;
 
             // objeto que fara a conexao
@@ -28,6 +28,7 @@ namespace Plano_ensino.DAL
 
             //adiciona valores aos parametros do sql
             sqlcmd.Parameters.AddWithValue("@nome", pnome);
+            sqlcmd.Parameters.AddWithValue("@id", crm);
 
             try
             {
@@ -126,7 +127,9 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from Professor";
+            string cmd = "SELECT IdProfessor AS CRM, nome AS Nome " +
+                            "FROM Professor";
+                            //WHERE(nome = @texto)";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
@@ -159,7 +162,9 @@ namespace Plano_ensino.DAL
         public static DataSet Pesquisar(String texto)
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from Professor WHERE Nome LIKE @texto";
+            string cmd = "SELECT IdProfessor AS CRM, nome AS Nome "+
+                        " FROM Professor "+
+                        " WHERE(nome LIKE @texto)";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);

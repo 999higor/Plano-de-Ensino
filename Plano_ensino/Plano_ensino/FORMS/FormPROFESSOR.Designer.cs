@@ -101,7 +101,6 @@
             // 
             // tbIDPROFESSOR
             // 
-            this.tbIDPROFESSOR.Enabled = false;
             this.tbIDPROFESSOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDPROFESSOR.Location = new System.Drawing.Point(13, 29);
             this.tbIDPROFESSOR.Name = "tbIDPROFESSOR";

@@ -46,8 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD_PlanoEnsinoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_PlanoEnsinoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Comp_CurricularDAL.cs" />
     <Compile Include="DAL\CursoDAL.cs" />
+    <Compile Include="DAL\Plano_EnsinoDAL.cs" />
     <Compile Include="DAL\ProfessorDAL.cs" />
     <Compile Include="FORMS\FormCOMP_CURRICULAR.cs">
       <SubType>Form</SubType>
@@ -105,6 +111,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BD_PlanoEnsinoDataSet.xsc">
+      <DependentUpon>BD_PlanoEnsinoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_PlanoEnsinoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_PlanoEnsinoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_PlanoEnsinoDataSet.xss">
+      <DependentUpon>BD_PlanoEnsinoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -21,7 +21,7 @@ namespace Plano_ensino.FORMS
         private void btSALVAR_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            resultado = ProfessorDAL.Inserir(tbNOME.Text);
+            resultado = ProfessorDAL.Inserir(tbNOME.Text, Convert.ToInt32(tbIDPROFESSOR.Text));
 
             if (resultado == 1)
             {

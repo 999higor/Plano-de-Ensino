@@ -33,5 +33,17 @@ namespace Plano_ensino.Properties {
                 return ((string)(this["PlanoDeEnsinoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"D:\\higor\\Documents\\GitHub\\Pl" +
+            "ano-de-Ensino\\banco de dados\\BD_PlanoEnsino.mdf\";Integrated Security=True;Connec" +
+            "t Timeout=30")]
+        public string BD_PlanoEnsinoConnectionString {
+            get {
+                return ((string)(this["BD_PlanoEnsinoConnectionString"]));
+            }
+        }
     }
 }
