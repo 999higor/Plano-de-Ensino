@@ -33,6 +33,7 @@
             this.cursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.componenteCurricularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planoDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cursoToolStripMenuItem,
             this.professorToolStripMenuItem,
-            this.componenteCurricularToolStripMenuItem});
+            this.componenteCurricularToolStripMenuItem,
+            this.planoDeEnsinoToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
@@ -78,6 +80,13 @@
             this.componenteCurricularToolStripMenuItem.Text = "Componente Curricular";
             this.componenteCurricularToolStripMenuItem.Click += new System.EventHandler(this.componenteCurricularToolStripMenuItem_Click);
             // 
+            // planoDeEnsinoToolStripMenuItem
+            // 
+            this.planoDeEnsinoToolStripMenuItem.Name = "planoDeEnsinoToolStripMenuItem";
+            this.planoDeEnsinoToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
+            this.planoDeEnsinoToolStripMenuItem.Text = "Plano de Ensino";
+            this.planoDeEnsinoToolStripMenuItem.Click += new System.EventHandler(this.planoDeEnsinoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +110,7 @@
         private System.Windows.Forms.ToolStripMenuItem cursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem componenteCurricularToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planoDeEnsinoToolStripMenuItem;
     }
 }
 

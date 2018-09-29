@@ -21,7 +21,7 @@ namespace Plano_ensino.FORMS
         private void FormPLANO_ENSINO_Load(object sender, EventArgs e)
         {
             this.carrega_tabela();
-            this.carrega_tabela();
+            this.carrega_combo();
         }
 
         private void carrega_tabela()
@@ -100,12 +100,12 @@ namespace Plano_ensino.FORMS
                 tbCOLEGIADO.Text = dr["Colegiado"].ToString();
                 tbINTEGRACAO.Text = dr["Integração"].ToString();
                 tbAVALIACAO.Text = dr["Avaliação"].ToString();
-                tbREF_APROFUNDAMENTO.Text = dr["[Ref - Aprofundamento]"].ToString();
+                tbREF_APROFUNDAMENTO.Text = dr["Ref - Aprofundamento"].ToString();
                 tbCRONOGRAMA.Text = dr["Cronograma"].ToString();
                 tbRECUPERACAO.Text = dr["Recuperação"].ToString();
                 tbMETODOLOGIA.Text = dr["Metodologia"].ToString();
                 
-                cbCOMP_CURRICULAR.SelectedValue = Convert.ToInt16(dr["[ID - CP]"].ToString());
+                cbCOMP_CURRICULAR.SelectedValue = Convert.ToInt16(dr["ID - CP"].ToString());
             }
         }
 

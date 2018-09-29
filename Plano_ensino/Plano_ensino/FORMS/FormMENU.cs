@@ -32,5 +32,11 @@ namespace Plano_ensino
         {
             new FormCOMP_CURRICULAR().ShowDialog();
         }
+
+        private void planoDeEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPLANO_ENSINO().ShowDialog();
+
+        }
     }
 }

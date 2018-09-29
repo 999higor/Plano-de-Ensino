@@ -17,7 +17,7 @@ namespace Plano_ensino.DAL
             string metodologia, int comp_curricular)
         {
             //texto com o comando que sera executado
-            string cmd = "INSERT INTO PlanoEnsino (ano ,semestre, colegiado, possibilidade_integracao, avaliacao_curricular, referencias_aprofundamento, "+
+            string cmd = "INSERT INTO PlanoEnsino (ano ,semestre_letivo, colegiado, possibilidade_integracao, avaliacao_curricular, referencias_aprofundamento, "+
                 " conteudo_programado, cronograma, estrategia_recuperacao, metodologia, codigo_componente_curricular) "+
                 " VALUES (@ano ,@semestre, @colegiado, @possibilidade_integracao, @avaliacao_curricular, @referencias_aprofundamento, "+
                 " @conteudo_programado, @cronograma, @estrategia_recuperacao, @metodologia, @codigo_componente_curricular)";
@@ -68,7 +68,7 @@ namespace Plano_ensino.DAL
         {
             //texto com o comando que sera executado
             string cmd = "UPDATE PlanoEnsino " +
-                "SET ano = @ano, semestre = @semestre, colegiado = @colegiado, possibilidade_integracao = @possibilidade_integracao, avaliacao_curricular = @avaliacao_curricular, referencias_aprofundamento = @referencias_aprofundamento, " +
+                "SET ano = @ano, semestre_letivo = @semestre, colegiado = @colegiado, possibilidade_integracao = @possibilidade_integracao, avaliacao_curricular = @avaliacao_curricular, referencias_aprofundamento = @referencias_aprofundamento, " +
                 " conteudo_programado = @conteudo_programado, cronograma = @cronograma, estrategia_recuperacao = @estrategia_recuperacao, metodologia = @metodologia, codigo_componente_curricular = @codigo_componente_curricular WHERE IdPlanoEnsino = @IdPlanoEnsino";
             int res = 0;
 
