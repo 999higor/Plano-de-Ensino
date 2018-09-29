@@ -51,6 +51,12 @@
             this.tbRECUPERACAO = new System.Windows.Forms.TextBox();
             this.tbMETODOLOGIA = new System.Windows.Forms.TextBox();
             this.tabela = new System.Windows.Forms.DataGridView();
+            this.btSALVAR = new System.Windows.Forms.Button();
+            this.btNOVO = new System.Windows.Forms.Button();
+            this.btALTERAR = new System.Windows.Forms.Button();
+            this.btEXCLUIR = new System.Windows.Forms.Button();
+            this.cbCOMP_CURRICULAR = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +134,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(315, 541);
+            this.label8.Location = new System.Drawing.Point(315, 485);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(170, 20);
             this.label8.TabIndex = 7;
@@ -148,7 +154,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(315, 198);
+            this.label10.Location = new System.Drawing.Point(315, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(204, 20);
             this.label10.TabIndex = 9;
@@ -158,7 +164,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(323, 353);
+            this.label11.Location = new System.Drawing.Point(315, 297);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 20);
             this.label11.TabIndex = 10;
@@ -226,7 +232,7 @@
             // tbCONTEUDO_PROGRAMADO
             // 
             this.tbCONTEUDO_PROGRAMADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCONTEUDO_PROGRAMADO.Location = new System.Drawing.Point(319, 564);
+            this.tbCONTEUDO_PROGRAMADO.Location = new System.Drawing.Point(319, 508);
             this.tbCONTEUDO_PROGRAMADO.Multiline = true;
             this.tbCONTEUDO_PROGRAMADO.Name = "tbCONTEUDO_PROGRAMADO";
             this.tbCONTEUDO_PROGRAMADO.Size = new System.Drawing.Size(279, 180);
@@ -238,22 +244,22 @@
             this.tbCRONOGRAMA.Location = new System.Drawing.Point(319, 37);
             this.tbCRONOGRAMA.Multiline = true;
             this.tbCRONOGRAMA.Name = "tbCRONOGRAMA";
-            this.tbCRONOGRAMA.Size = new System.Drawing.Size(279, 158);
+            this.tbCRONOGRAMA.Size = new System.Drawing.Size(279, 144);
             this.tbCRONOGRAMA.TabIndex = 19;
             // 
             // tbRECUPERACAO
             // 
             this.tbRECUPERACAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRECUPERACAO.Location = new System.Drawing.Point(319, 219);
+            this.tbRECUPERACAO.Location = new System.Drawing.Point(319, 207);
             this.tbRECUPERACAO.Multiline = true;
             this.tbRECUPERACAO.Name = "tbRECUPERACAO";
-            this.tbRECUPERACAO.Size = new System.Drawing.Size(279, 129);
+            this.tbRECUPERACAO.Size = new System.Drawing.Size(279, 87);
             this.tbRECUPERACAO.TabIndex = 20;
             // 
             // tbMETODOLOGIA
             // 
             this.tbMETODOLOGIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMETODOLOGIA.Location = new System.Drawing.Point(319, 376);
+            this.tbMETODOLOGIA.Location = new System.Drawing.Point(319, 320);
             this.tbMETODOLOGIA.Multiline = true;
             this.tbMETODOLOGIA.Name = "tbMETODOLOGIA";
             this.tbMETODOLOGIA.Size = new System.Drawing.Size(279, 162);
@@ -264,14 +270,82 @@
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabela.Location = new System.Drawing.Point(653, 37);
             this.tabela.Name = "tabela";
-            this.tabela.Size = new System.Drawing.Size(825, 707);
+            this.tabela.Size = new System.Drawing.Size(825, 645);
             this.tabela.TabIndex = 22;
+            // 
+            // btSALVAR
+            // 
+            this.btSALVAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSALVAR.Location = new System.Drawing.Point(653, 701);
+            this.btSALVAR.Name = "btSALVAR";
+            this.btSALVAR.Size = new System.Drawing.Size(107, 36);
+            this.btSALVAR.TabIndex = 23;
+            this.btSALVAR.Text = "Salvar";
+            this.btSALVAR.UseVisualStyleBackColor = true;
+            this.btSALVAR.Click += new System.EventHandler(this.btSALVAR_Click);
+            // 
+            // btNOVO
+            // 
+            this.btNOVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNOVO.Location = new System.Drawing.Point(830, 701);
+            this.btNOVO.Name = "btNOVO";
+            this.btNOVO.Size = new System.Drawing.Size(107, 36);
+            this.btNOVO.TabIndex = 24;
+            this.btNOVO.Text = "Novo";
+            this.btNOVO.UseVisualStyleBackColor = true;
+            this.btNOVO.Click += new System.EventHandler(this.btNOVO_Click);
+            // 
+            // btALTERAR
+            // 
+            this.btALTERAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btALTERAR.Location = new System.Drawing.Point(1007, 701);
+            this.btALTERAR.Name = "btALTERAR";
+            this.btALTERAR.Size = new System.Drawing.Size(107, 36);
+            this.btALTERAR.TabIndex = 25;
+            this.btALTERAR.Text = "Alterar";
+            this.btALTERAR.UseVisualStyleBackColor = true;
+            this.btALTERAR.Click += new System.EventHandler(this.btALTERAR_Click);
+            // 
+            // btEXCLUIR
+            // 
+            this.btEXCLUIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEXCLUIR.Location = new System.Drawing.Point(1181, 701);
+            this.btEXCLUIR.Name = "btEXCLUIR";
+            this.btEXCLUIR.Size = new System.Drawing.Size(107, 36);
+            this.btEXCLUIR.TabIndex = 26;
+            this.btEXCLUIR.Text = "Excluír";
+            this.btEXCLUIR.UseVisualStyleBackColor = true;
+            this.btEXCLUIR.Click += new System.EventHandler(this.btEXCLUIR_Click);
+            // 
+            // cbCOMP_CURRICULAR
+            // 
+            this.cbCOMP_CURRICULAR.FormattingEnabled = true;
+            this.cbCOMP_CURRICULAR.Location = new System.Drawing.Point(319, 714);
+            this.cbCOMP_CURRICULAR.Name = "cbCOMP_CURRICULAR";
+            this.cbCOMP_CURRICULAR.Size = new System.Drawing.Size(279, 21);
+            this.cbCOMP_CURRICULAR.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(315, 691);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(172, 20);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Componente Currícular";
             // 
             // FormPLANO_ENSINO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cbCOMP_CURRICULAR);
+            this.Controls.Add(this.btEXCLUIR);
+            this.Controls.Add(this.btALTERAR);
+            this.Controls.Add(this.btNOVO);
+            this.Controls.Add(this.btSALVAR);
             this.Controls.Add(this.tabela);
             this.Controls.Add(this.tbMETODOLOGIA);
             this.Controls.Add(this.tbRECUPERACAO);
@@ -297,6 +371,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormPLANO_ENSINO";
             this.Text = "Plano de Ensino";
+            this.Load += new System.EventHandler(this.FormPLANO_ENSINO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,5 +403,11 @@
         private System.Windows.Forms.TextBox tbRECUPERACAO;
         private System.Windows.Forms.TextBox tbMETODOLOGIA;
         private System.Windows.Forms.DataGridView tabela;
+        private System.Windows.Forms.Button btSALVAR;
+        private System.Windows.Forms.Button btNOVO;
+        private System.Windows.Forms.Button btALTERAR;
+        private System.Windows.Forms.Button btEXCLUIR;
+        private System.Windows.Forms.ComboBox cbCOMP_CURRICULAR;
+        private System.Windows.Forms.Label label12;
     }
 }

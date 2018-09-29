@@ -151,7 +151,10 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from ComponenteCurricular";
+            string cmd = "SELECT IdComponenteCurricular AS ID, nome AS Nome, semestre AS Semestre, objetivo AS Objetivo, modalidade_oferta AS Oferta, ementa AS Ementa, referencias_basicas AS[Ref - Básicas], " +
+                        " referencias_complementares AS[Ref - Complementares], hora_aula_distancia AS[HA - Distância], hora_aula_presencial AS[HA - Presencial], " +
+                        " hora_relogio_distancia AS[HR - Distância], hora_relogio_presencial AS[HR - Presencial], codigo_curso AS Curso " +
+                        " FROM ComponenteCurricular";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
@@ -184,7 +187,11 @@ namespace Plano_ensino.DAL
         public static DataSet Pesquisar(String texto)
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from ComponenteCurricular WHERE nome LIKE @texto";
+            string cmd = "SELECT IdComponenteCurricular AS ID, nome AS Nome, semestre AS Semestre, objetivo AS Objetivo, modalidade_oferta AS Oferta, ementa AS Ementa, referencias_basicas AS [Ref-Básicas], "+
+                        " referencias_complementares AS[Ref - Complementares], hora_aula_distancia AS[HA - Distância], hora_aula_presencial AS[HA - Presencial], "+
+                        " hora_relogio_distancia AS[HR - Distância], hora_relogio_presencial AS[HR - Presencial], codigo_curso AS Curso "+
+                        " FROM ComponenteCurricular "+
+                        " WHERE(nome LIKE @texto)";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);

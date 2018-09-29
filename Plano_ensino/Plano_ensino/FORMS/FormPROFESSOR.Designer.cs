@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabela = new System.Windows.Forms.DataGridView();
             this.btSALVAR = new System.Windows.Forms.Button();
             this.btNOVO = new System.Windows.Forms.Button();
@@ -39,7 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbPESQUISA = new System.Windows.Forms.TextBox();
             this.btPESQUISAR = new System.Windows.Forms.Button();
+            this.bD_PlanoEnsinoDataSet = new Plano_ensino.BD_PlanoEnsinoDataSet();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.professorTableAdapter = new Plano_ensino.BD_PlanoEnsinoDataSetTableAdapters.ProfessorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_PlanoEnsinoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabela
@@ -154,6 +160,20 @@
             this.btPESQUISAR.UseVisualStyleBackColor = true;
             this.btPESQUISAR.Click += new System.EventHandler(this.btPESQUISAR_Click);
             // 
+            // bD_PlanoEnsinoDataSet
+            // 
+            this.bD_PlanoEnsinoDataSet.DataSetName = "BD_PlanoEnsinoDataSet";
+            this.bD_PlanoEnsinoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataMember = "Professor";
+            this.professorBindingSource.DataSource = this.bD_PlanoEnsinoDataSet;
+            // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
             // FormPROFESSOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +194,8 @@
             this.Text = "Professores";
             this.Load += new System.EventHandler(this.FormPROFESSOR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD_PlanoEnsinoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +214,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPESQUISA;
         private System.Windows.Forms.Button btPESQUISAR;
+        private BD_PlanoEnsinoDataSet bD_PlanoEnsinoDataSet;
+        private System.Windows.Forms.BindingSource professorBindingSource;
+        private BD_PlanoEnsinoDataSetTableAdapters.ProfessorTableAdapter professorTableAdapter;
     }
 }

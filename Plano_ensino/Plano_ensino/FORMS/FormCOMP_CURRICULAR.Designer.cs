@@ -211,7 +211,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 20);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Referencias Basicas";
+            this.label5.Text = "Referências Básicas";
             // 
             // label6
             // 
@@ -222,7 +222,6 @@
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Ementa";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -304,6 +303,7 @@
             this.btNOVO.TabIndex = 25;
             this.btNOVO.Text = "Novo";
             this.btNOVO.UseVisualStyleBackColor = true;
+            this.btNOVO.Click += new System.EventHandler(this.btNOVO_Click);
             // 
             // btALTERAR
             // 
@@ -314,6 +314,7 @@
             this.btALTERAR.TabIndex = 26;
             this.btALTERAR.Text = "Alterar";
             this.btALTERAR.UseVisualStyleBackColor = true;
+            this.btALTERAR.Click += new System.EventHandler(this.btALTERAR_Click);
             // 
             // btEXCLUIR
             // 
@@ -324,6 +325,7 @@
             this.btEXCLUIR.TabIndex = 27;
             this.btEXCLUIR.Text = "Excluir";
             this.btEXCLUIR.UseVisualStyleBackColor = true;
+            this.btEXCLUIR.Click += new System.EventHandler(this.btEXCLUIR_Click);
             // 
             // tbID
             // 
@@ -348,8 +350,11 @@
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabela.Location = new System.Drawing.Point(618, 84);
             this.tabela.Name = "tabela";
+            this.tabela.ReadOnly = true;
+            this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabela.Size = new System.Drawing.Size(843, 526);
             this.tabela.TabIndex = 30;
+            this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
             // 
             // FormCOMP_CURRICULAR
             // 

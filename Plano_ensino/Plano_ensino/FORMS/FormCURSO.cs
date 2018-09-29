@@ -116,9 +116,9 @@ namespace Plano_ensino.FORMS
             if (selecionado != -1)
             {
                 DataRowView dr = (DataRowView)tabela.Rows[selecionado].DataBoundItem;
-                tbIDCURSO.Text = dr["IdCurso"].ToString();
-                tbNOME.Text = dr["nome"].ToString();
-                tbOBJETIVO.Text = dr["objetivo"].ToString();
+                tbIDCURSO.Text = dr["ID"].ToString();
+                tbNOME.Text = dr["Curso"].ToString();
+                tbOBJETIVO.Text = dr["Objetivo"].ToString();
             }
         }
     }

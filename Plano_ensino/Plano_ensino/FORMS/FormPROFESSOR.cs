@@ -43,7 +43,7 @@ namespace Plano_ensino.FORMS
         private void btEXCLUIR_Click(object sender, EventArgs e)
         {
             int resultado = 0;
-            resultado = ProfessorDAL.Excluir(Convert.ToInt16(tbIDPROFESSOR.Text));
+            resultado = ProfessorDAL.Excluir(Convert.ToInt32(tbIDPROFESSOR.Text));
 
             if (resultado == 1)
             {
@@ -87,6 +87,8 @@ namespace Plano_ensino.FORMS
 
         private void FormPROFESSOR_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD_PlanoEnsinoDataSet.Professor' table. You can move, or remove it, as needed.
+            this.professorTableAdapter.Fill(this.bD_PlanoEnsinoDataSet.Professor);
             this.atualizaTabela();
         }
 
@@ -114,8 +116,8 @@ namespace Plano_ensino.FORMS
             if (selecionado != -1)
             {
                 DataRowView dr = (DataRowView)tabela.Rows[selecionado].DataBoundItem;
-                tbIDPROFESSOR.Text = dr["IdProfessor"].ToString();
-                tbNOME.Text = dr["nome"].ToString();
+                tbIDPROFESSOR.Text = dr["CRM"].ToString();
+                tbNOME.Text = dr["Nome"].ToString();
             }
         }
     }

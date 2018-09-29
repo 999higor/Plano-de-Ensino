@@ -128,7 +128,9 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from Curso";
+            string cmd = "SELECT IdCurso AS ID, nome AS Curso, objetivo AS Objetivo " +
+                        " FROM Curso ";
+                        
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
@@ -161,7 +163,9 @@ namespace Plano_ensino.DAL
         public static DataSet Pesquisar(String texto)
         {
             //texto com o comando sql que sera executado
-            string cmd = "Select * from Curso WHERE Nome LIKE @texto";
+            string cmd = "SELECT        IdCurso AS ID, nome AS Curso, objetivo AS Objetivo "+
+                " FROM Curso"+
+                " WHERE(nome LIKE @texto)";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);

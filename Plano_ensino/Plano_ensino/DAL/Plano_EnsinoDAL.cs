@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -146,6 +147,118 @@ namespace Plano_ensino.DAL
             }
 
             return res;
+        }
+
+        public static DataSet atualizaTabela()
+        {
+            //texto com o comando sql que sera executado
+            string cmd = "SELECT IdPlanoEnsino AS ID, ano AS Ano, semestre_letivo AS Semestre, colegiado AS Colegiado, possibilidade_integracao AS Integração, avaliacao_curricular AS Avaliação, " +
+                " referencias_aprofundamento AS [Ref-Aprofundamento], conteudo_programado AS Conteúdo, cronograma AS Cronograma, estrategia_recuperacao AS Recuperação, metodologia AS Metodologia, codigo_componente_curricular AS[ID - CP] " +
+                " FROM PlanoEnsino";
+                
+
+
+            //objeto que ira fazer a conexao
+            SqlConnection conn = new SqlConnection(strConnection);
+            //objeto que ira executar o comando sql
+            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = sqlcmd;
+
+            DataSet dataSet = new DataSet();
+
+
+            try
+            {
+                conn.Open();    //abre a conexao com o banco
+                adapter.Fill(dataSet);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dataSet;
+        }
+
+        public static DataSet Pesquisar(String texto)
+        {
+            //texto com o comando sql que sera executado
+            string cmd = "SELECT IdPlanoEnsino AS ID, ano AS Ano, semestre_letivo AS Semestre, colegiado AS Colegiado, possibilidade_integracao AS Integração, avaliacao_curricular AS Avaliação, " +
+                " referencias_aprofundamento AS [Ref-Aprofundamento], conteudo_programado AS Conteúdo, cronograma AS Cronograma, estrategia_recuperacao AS Recuperação, metodologia AS Metodologia, codigo_componente_curricular AS[ID - CP] " +
+                " FROM PlanoEnsino " +
+                " WHERE(ano = @texto)";
+
+            //objeto que ira fazer a conexao
+            SqlConnection conn = new SqlConnection(strConnection);
+            //objeto que ira executar o comando sql
+            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+
+            sqlcmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = sqlcmd;
+
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                conn.Open();    //abre a conexao com o banco
+                adapter.Fill(dataSet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dataSet;
+        }
+
+        public static DataTable atualiza_combo()
+        {
+            //texto com o comando sql que sera executado
+            string cmd = "Select * from ComponenteCurricular";
+
+            //objeto que ira fazer a conexao
+            SqlConnection conn = new SqlConnection(strConnection);
+            //objeto que ira executar o comando sql
+            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = sqlcmd;
+
+            DataTable dataSet = new DataTable();
+
+
+            try
+            {
+                conn.Open();    //abre a conexao com o banco
+                adapter.Fill(dataSet);
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dataSet;
         }
     }
 }
