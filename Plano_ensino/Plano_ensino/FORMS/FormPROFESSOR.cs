@@ -20,16 +20,23 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = ProfessorDAL.Inserir(tbNOME.Text, Convert.ToInt32(tbIDPROFESSOR.Text));
-
-            if (resultado == 1)
+            if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) && string.IsNullOrEmpty(tbNOME.Text))
             {
-                MessageBox.Show("Registro Inserido com Sucesso !");
+                MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Falha ao Inserir o Registro !");
+                int resultado = 0;
+                resultado = ProfessorDAL.Inserir(tbNOME.Text, Convert.ToInt32(tbIDPROFESSOR.Text));
+
+                if (resultado == 1)
+                {
+                    MessageBox.Show("Registro Inserido com Sucesso !", " Aviso de Inserção ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao Inserir o Registro !", " Aviso de Inserção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             this.atualizaTabela();
         }
@@ -42,32 +49,54 @@ namespace Plano_ensino.FORMS
 
         private void btEXCLUIR_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = ProfessorDAL.Excluir(Convert.ToInt32(tbIDPROFESSOR.Text));
+            if (MessageBox.Show("Tem certeza que deseja excluír esse Registro ?", "Aviso de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(tbIDPROFESSOR.Text))
+                {
+                    MessageBox.Show(" Verifique campos em Branco !", "Falha ao Excluír !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    int resultado = 0;
+                    resultado = ProfessorDAL.Excluir(Convert.ToInt32(tbIDPROFESSOR.Text));
 
-            if (resultado == 1)
-            {
-                MessageBox.Show("Registro Excluído com Sucesso !");
-            }
-            else
-            {
-                MessageBox.Show("Falha ao Excluir o Registro !");
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Registro Excluído com Sucesso !", "Aviso de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao Excluir o Registro !", "Aviso de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                
             }
             this.atualizaTabela();
         }
 
         private void btAlterar_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = ProfessorDAL.Alterar(Convert.ToInt16(tbIDPROFESSOR.Text), tbNOME.Text);
+            if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) && string.IsNullOrEmpty(tbNOME.Text))
+                {
+                    MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
 
-            if (resultado == 1)
-            {
-                MessageBox.Show("Registro Alterado com Sucesso !");
-            }
-            else
-            {
-                MessageBox.Show("Falha ao Alterar o Registro !");
+                    int resultado = 0;
+                    resultado = ProfessorDAL.Alterar(Convert.ToInt16(tbIDPROFESSOR.Text), tbNOME.Text);
+
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Registro Alterado com Sucesso !" ,"Aviso de Alteração" ,MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao Alterar o Registro !" ,"Aviso de Alteração", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             this.atualizaTabela();
         }
@@ -87,8 +116,6 @@ namespace Plano_ensino.FORMS
 
         private void FormPROFESSOR_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bD_PlanoEnsinoDataSet.Professor' table. You can move, or remove it, as needed.
-            this.professorTableAdapter.Fill(this.bD_PlanoEnsinoDataSet.Professor);
             this.atualizaTabela();
         }
 

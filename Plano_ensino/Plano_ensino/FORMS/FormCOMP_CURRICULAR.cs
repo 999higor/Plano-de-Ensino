@@ -20,19 +20,28 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = Comp_CurricularDAL.Inserir(tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
-                tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
-                Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text), 
-                Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
-
-            if (resultado == 1)
+            if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text)
+                && string.IsNullOrEmpty(tbMOD_OFERTA.Text) && string.IsNullOrEmpty(tbEMENTA.Text) && string.IsNullOrEmpty(tbREF_BASICA.Text)
+                && string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) && string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) && string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) && string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
             {
-                MessageBox.Show("Registro Inserido com Sucesso !");
+                MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Falha ao Inserir o Registro !");
+                int resultado = 0;
+                resultado = Comp_CurricularDAL.Inserir(tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
+                    tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
+                    Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text),
+                    Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
+
+                if (resultado == 1)
+                {
+                    MessageBox.Show("Registro Inserido com Sucesso !", " Aviso de Inserção ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao Inserir o Registro !", " Aviso de Inserção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             this.carrega_tabela();
         }
@@ -78,35 +87,58 @@ namespace Plano_ensino.FORMS
 
         private void btALTERAR_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = Comp_CurricularDAL.Alterar(Convert.ToInt32(tbID.Text),tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
-                tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
-                Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text),
-                Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
+            if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text)
+                && string.IsNullOrEmpty(tbMOD_OFERTA.Text) && string.IsNullOrEmpty(tbEMENTA.Text) && string.IsNullOrEmpty(tbREF_BASICA.Text)
+                && string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) && string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) && string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) && string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
+                {
+                    MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    int resultado = 0;
+                    resultado = Comp_CurricularDAL.Alterar(Convert.ToInt32(tbID.Text), tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
+                        tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
+                        Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text),
+                        Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
 
-            if (resultado == 1)
-            {
-                MessageBox.Show("Registro Inserido com Sucesso !");
-            }
-            else
-            {
-                MessageBox.Show("Falha ao Inserir o Registro !");
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Registro Alterado com Sucesso !", "Aviso de Alteração", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao Alterar o Registro !", "Aviso de Alteração", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             this.carrega_tabela();
         }
 
         private void btEXCLUIR_Click(object sender, EventArgs e)
         {
-            int resultado = 0;
-            resultado = Comp_CurricularDAL.Excluir(Convert.ToInt16(tbID.Text));
+            if (MessageBox.Show("Tem certeza que deseja excluír esse Registro ?", "Aviso de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                if (string.IsNullOrEmpty(tbID.Text))
+                {
+                    MessageBox.Show(" Verifique campos em Branco !", "Falha ao Excluír !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
 
-            if (resultado == 1)
-            {
-                MessageBox.Show("Registro Excluído com Sucesso !");
-            }
-            else
-            {
-                MessageBox.Show("Falha ao Excluir o Registro !");
+                    int resultado = 0;
+                    resultado = Comp_CurricularDAL.Excluir(Convert.ToInt16(tbID.Text));
+
+                    if (resultado == 1)
+                    {
+                        MessageBox.Show("Registro Excluído com Sucesso !", "Aviso de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao Excluir o Registro !", "Aviso de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             this.carrega_tabela();
         }
@@ -144,6 +176,18 @@ namespace Plano_ensino.FORMS
                 tb_HRR_PRESENCIAL.Text = dr["HR - Presencial"].ToString();
                 cbCURSO.SelectedValue = Convert.ToInt16(dr["Curso"].ToString());
             }
+        }
+
+        private void atualizaPesquisa()
+        {
+            DataSet ds = Comp_CurricularDAL.Pesquisar(tbPESQUISA.Text);
+            tabela.DataSource = ds;
+            tabela.DataMember = ds.Tables[0].TableName;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.atualizaPesquisa();
         }
     }
 }

@@ -59,6 +59,8 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabela = new System.Windows.Forms.DataGridView();
+            this.tbPESQUISA = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.SuspendLayout();
             // 
@@ -329,6 +331,7 @@
             // 
             // tbID
             // 
+            this.tbID.Enabled = false;
             this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbID.Location = new System.Drawing.Point(12, 32);
             this.tbID.Name = "tbID";
@@ -352,15 +355,36 @@
             this.tabela.Name = "tabela";
             this.tabela.ReadOnly = true;
             this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabela.Size = new System.Drawing.Size(843, 526);
+            this.tabela.Size = new System.Drawing.Size(731, 526);
             this.tabela.TabIndex = 30;
             this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
+            // 
+            // tbPESQUISA
+            // 
+            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPESQUISA.Location = new System.Drawing.Point(618, 32);
+            this.tbPESQUISA.Name = "tbPESQUISA";
+            this.tbPESQUISA.Size = new System.Drawing.Size(390, 24);
+            this.tbPESQUISA.TabIndex = 31;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1045, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 36);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "PESQUISAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCOMP_CURRICULAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 629);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbPESQUISA);
             this.Controls.Add(this.tabela);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tbID);
@@ -434,5 +458,7 @@
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView tabela;
+        private System.Windows.Forms.TextBox tbPESQUISA;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -57,6 +57,8 @@
             this.btEXCLUIR = new System.Windows.Forms.Button();
             this.cbCOMP_CURRICULAR = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btPESQUISAR = new System.Windows.Forms.Button();
+            this.tbPESQUISA = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,6 +174,7 @@
             // 
             // tbID
             // 
+            this.tbID.Enabled = false;
             this.tbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbID.Location = new System.Drawing.Point(12, 44);
             this.tbID.Name = "tbID";
@@ -268,10 +271,13 @@
             // tabela
             // 
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabela.Location = new System.Drawing.Point(632, 44);
+            this.tabela.Location = new System.Drawing.Point(632, 71);
             this.tabela.Name = "tabela";
-            this.tabela.Size = new System.Drawing.Size(709, 551);
+            this.tabela.ReadOnly = true;
+            this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tabela.Size = new System.Drawing.Size(709, 524);
             this.tabela.TabIndex = 22;
+            this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
             // 
             // btSALVAR
             // 
@@ -319,10 +325,11 @@
             // 
             // cbCOMP_CURRICULAR
             // 
+            this.cbCOMP_CURRICULAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCOMP_CURRICULAR.FormattingEnabled = true;
             this.cbCOMP_CURRICULAR.Location = new System.Drawing.Point(319, 667);
             this.cbCOMP_CURRICULAR.Name = "cbCOMP_CURRICULAR";
-            this.cbCOMP_CURRICULAR.Size = new System.Drawing.Size(279, 21);
+            this.cbCOMP_CURRICULAR.Size = new System.Drawing.Size(279, 24);
             this.cbCOMP_CURRICULAR.TabIndex = 27;
             // 
             // label12
@@ -335,11 +342,32 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Componente Currícular";
             // 
+            // btPESQUISAR
+            // 
+            this.btPESQUISAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPESQUISAR.Location = new System.Drawing.Point(877, 33);
+            this.btPESQUISAR.Name = "btPESQUISAR";
+            this.btPESQUISAR.Size = new System.Drawing.Size(118, 33);
+            this.btPESQUISAR.TabIndex = 29;
+            this.btPESQUISAR.Text = "PESQUISAR";
+            this.btPESQUISAR.UseVisualStyleBackColor = true;
+            this.btPESQUISAR.Click += new System.EventHandler(this.btPESQUISAR_Click);
+            // 
+            // tbPESQUISA
+            // 
+            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPESQUISA.Location = new System.Drawing.Point(632, 37);
+            this.tbPESQUISA.Name = "tbPESQUISA";
+            this.tbPESQUISA.Size = new System.Drawing.Size(218, 24);
+            this.tbPESQUISA.TabIndex = 30;
+            // 
             // FormPLANO_ENSINO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 711);
+            this.Controls.Add(this.tbPESQUISA);
+            this.Controls.Add(this.btPESQUISAR);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbCOMP_CURRICULAR);
             this.Controls.Add(this.btEXCLUIR);
@@ -409,5 +437,7 @@
         private System.Windows.Forms.Button btEXCLUIR;
         private System.Windows.Forms.ComboBox cbCOMP_CURRICULAR;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btPESQUISAR;
+        private System.Windows.Forms.TextBox tbPESQUISA;
     }
 }
