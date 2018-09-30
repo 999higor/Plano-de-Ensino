@@ -103,7 +103,7 @@ namespace Plano_ensino.DAL
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
             finally
             {
@@ -139,7 +139,7 @@ namespace Plano_ensino.DAL
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
             finally
             {
