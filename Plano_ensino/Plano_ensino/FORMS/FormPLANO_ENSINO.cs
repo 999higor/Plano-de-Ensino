@@ -43,9 +43,9 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbANO.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbCOLEGIADO.Text)
-                && string.IsNullOrEmpty(tbINTEGRACAO.Text) && string.IsNullOrEmpty(tbAVALIACAO.Text) && string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
-                && string.IsNullOrEmpty(tbCRONOGRAMA.Text) && string.IsNullOrEmpty(tbRECUPERACAO.Text) && string.IsNullOrEmpty(tbMETODOLOGIA.Text))
+            if (string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
+                || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
+                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

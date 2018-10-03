@@ -20,7 +20,7 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) && string.IsNullOrEmpty(tbNOME.Text))
+            if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) || string.IsNullOrEmpty(tbNOME.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
