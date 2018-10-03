@@ -78,7 +78,7 @@ namespace Plano_ensino.FORMS
         {
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) && string.IsNullOrEmpty(tbNOME.Text))
+                if (string.IsNullOrEmpty(tbIDPROFESSOR.Text) || string.IsNullOrEmpty(tbNOME.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

@@ -20,7 +20,7 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbIDCURSO.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text))
+            if (string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -54,7 +54,7 @@ namespace Plano_ensino.FORMS
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
 
-                if (string.IsNullOrEmpty(tbIDCURSO.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text))
+                if (string.IsNullOrEmpty(tbIDCURSO.Text) || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

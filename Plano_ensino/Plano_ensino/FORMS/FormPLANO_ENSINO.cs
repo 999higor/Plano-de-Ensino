@@ -124,9 +124,9 @@ namespace Plano_ensino.FORMS
         {
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbANO.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbCOLEGIADO.Text)
-                && string.IsNullOrEmpty(tbINTEGRACAO.Text) && string.IsNullOrEmpty(tbAVALIACAO.Text) && string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
-                && string.IsNullOrEmpty(tbCRONOGRAMA.Text) && string.IsNullOrEmpty(tbRECUPERACAO.Text) && string.IsNullOrEmpty(tbMETODOLOGIA.Text))
+                if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
+                || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
+                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

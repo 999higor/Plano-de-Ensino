@@ -20,9 +20,9 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text)
-                && string.IsNullOrEmpty(tbMOD_OFERTA.Text) && string.IsNullOrEmpty(tbEMENTA.Text) && string.IsNullOrEmpty(tbREF_BASICA.Text)
-                && string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) && string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) && string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) && string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
+            if (string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text)
+                || string.IsNullOrEmpty(tbMOD_OFERTA.Text) || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
+                || string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) || string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) || string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) || string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -89,9 +89,9 @@ namespace Plano_ensino.FORMS
         {
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(tbID.Text) && string.IsNullOrEmpty(tbNOME.Text) && string.IsNullOrEmpty(tbSEMESTRE.Text) && string.IsNullOrEmpty(tbOBJETIVO.Text)
-                && string.IsNullOrEmpty(tbMOD_OFERTA.Text) && string.IsNullOrEmpty(tbEMENTA.Text) && string.IsNullOrEmpty(tbREF_BASICA.Text)
-                && string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) && string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) && string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) && string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
+                if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text)
+                || string.IsNullOrEmpty(tbMOD_OFERTA.Text) || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
+                || string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) || string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) || string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) || string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
