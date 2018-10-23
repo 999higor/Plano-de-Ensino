@@ -28,3 +28,4 @@ C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensin
 C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.exe
 C:\Users\Administrador\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.pdb
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormPLANO_ENSINO.resources
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormPROFESSOR_PLANO.resources

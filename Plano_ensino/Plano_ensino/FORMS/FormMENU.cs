@@ -38,5 +38,10 @@ namespace Plano_ensino
             new FormPLANO_ENSINO().ShowDialog();
 
         }
+
+        private void professorPlanoDeEnsinoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPROFESSOR_PLANO().ShowDialog();
+        }
     }
 }

@@ -508,6 +508,146 @@ SELECT IdProfessor, nome FROM Professor WHERE (IdProfessor = @IdProfessor)</Comm
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataPDF" msprop:Generator_TableClassName="DataPDFDataTable" msprop:Generator_TableVarName="tableDataPDF" msprop:Generator_TablePropName="DataPDF" msprop:Generator_RowDeletingName="DataPDFRowDeleting" msprop:Generator_RowChangingName="DataPDFRowChanging" msprop:Generator_RowEvHandlerName="DataPDFRowChangeEventHandler" msprop:Generator_RowDeletedName="DataPDFRowDeleted" msprop:Generator_UserTableName="DataPDF" msprop:Generator_RowChangedName="DataPDFRowChanged" msprop:Generator_RowEvArgName="DataPDFRowChangeEvent" msprop:Generator_RowClassName="DataPDFRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCurso" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCurso" msprop:Generator_ColumnPropNameInRow="IdCurso" msprop:Generator_ColumnPropNameInTable="IdCursoColumn" msprop:Generator_UserColumnName="IdCurso" type="xs:int" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="objetivo" msprop:Generator_ColumnVarNameInTable="columnobjetivo" msprop:Generator_ColumnPropNameInRow="objetivo" msprop:Generator_ColumnPropNameInTable="objetivoColumn" msprop:Generator_UserColumnName="objetivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdComponenteCurricular" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdComponenteCurricular" msprop:Generator_ColumnPropNameInRow="IdComponenteCurricular" msprop:Generator_ColumnPropNameInTable="IdComponenteCurricularColumn" msprop:Generator_UserColumnName="IdComponenteCurricular" type="xs:int" />
+              <xs:element name="nome1" msprop:Generator_ColumnVarNameInTable="columnnome1" msprop:Generator_ColumnPropNameInRow="nome1" msprop:Generator_ColumnPropNameInTable="nome1Column" msprop:Generator_UserColumnName="nome1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semestre" msprop:Generator_ColumnVarNameInTable="columnsemestre" msprop:Generator_ColumnPropNameInRow="semestre" msprop:Generator_ColumnPropNameInTable="semestreColumn" msprop:Generator_UserColumnName="semestre" type="xs:int" />
+              <xs:element name="objetivo1" msprop:Generator_ColumnVarNameInTable="columnobjetivo1" msprop:Generator_ColumnPropNameInRow="objetivo1" msprop:Generator_ColumnPropNameInTable="objetivo1Column" msprop:Generator_UserColumnName="objetivo1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="modalidade_oferta" msprop:Generator_ColumnVarNameInTable="columnmodalidade_oferta" msprop:Generator_ColumnPropNameInRow="modalidade_oferta" msprop:Generator_ColumnPropNameInTable="modalidade_ofertaColumn" msprop:Generator_UserColumnName="modalidade_oferta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ementa" msprop:Generator_ColumnVarNameInTable="columnementa" msprop:Generator_ColumnPropNameInRow="ementa" msprop:Generator_ColumnPropNameInTable="ementaColumn" msprop:Generator_UserColumnName="ementa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="referencias_basicas" msprop:Generator_ColumnVarNameInTable="columnreferencias_basicas" msprop:Generator_ColumnPropNameInRow="referencias_basicas" msprop:Generator_ColumnPropNameInTable="referencias_basicasColumn" msprop:Generator_UserColumnName="referencias_basicas">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="referencias_complementares" msprop:Generator_ColumnVarNameInTable="columnreferencias_complementares" msprop:Generator_ColumnPropNameInRow="referencias_complementares" msprop:Generator_ColumnPropNameInTable="referencias_complementaresColumn" msprop:Generator_UserColumnName="referencias_complementares" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hora_aula_distancia" msprop:Generator_ColumnVarNameInTable="columnhora_aula_distancia" msprop:Generator_ColumnPropNameInRow="hora_aula_distancia" msprop:Generator_ColumnPropNameInTable="hora_aula_distanciaColumn" msprop:Generator_UserColumnName="hora_aula_distancia" type="xs:int" />
+              <xs:element name="hora_aula_presencial" msprop:Generator_ColumnVarNameInTable="columnhora_aula_presencial" msprop:Generator_ColumnPropNameInRow="hora_aula_presencial" msprop:Generator_ColumnPropNameInTable="hora_aula_presencialColumn" msprop:Generator_UserColumnName="hora_aula_presencial" type="xs:int" />
+              <xs:element name="hora_relogio_distancia" msprop:Generator_ColumnVarNameInTable="columnhora_relogio_distancia" msprop:Generator_ColumnPropNameInRow="hora_relogio_distancia" msprop:Generator_ColumnPropNameInTable="hora_relogio_distanciaColumn" msprop:Generator_UserColumnName="hora_relogio_distancia" type="xs:int" />
+              <xs:element name="hora_relogio_presencial" msprop:Generator_ColumnVarNameInTable="columnhora_relogio_presencial" msprop:Generator_ColumnPropNameInRow="hora_relogio_presencial" msprop:Generator_ColumnPropNameInTable="hora_relogio_presencialColumn" msprop:Generator_UserColumnName="hora_relogio_presencial" type="xs:int" />
+              <xs:element name="codigo_curso" msprop:Generator_ColumnVarNameInTable="columncodigo_curso" msprop:Generator_ColumnPropNameInRow="codigo_curso" msprop:Generator_ColumnPropNameInTable="codigo_cursoColumn" msprop:Generator_UserColumnName="codigo_curso" type="xs:int" />
+              <xs:element name="IdProfessor" msprop:Generator_ColumnVarNameInTable="columnIdProfessor" msprop:Generator_ColumnPropNameInRow="IdProfessor" msprop:Generator_ColumnPropNameInTable="IdProfessorColumn" msprop:Generator_UserColumnName="IdProfessor" type="xs:int" />
+              <xs:element name="IdPlanoEnsino" msprop:Generator_ColumnVarNameInTable="columnIdPlanoEnsino" msprop:Generator_ColumnPropNameInRow="IdPlanoEnsino" msprop:Generator_ColumnPropNameInTable="IdPlanoEnsinoColumn" msprop:Generator_UserColumnName="IdPlanoEnsino" type="xs:int" />
+              <xs:element name="IdPlanoEnsino1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdPlanoEnsino1" msprop:Generator_ColumnPropNameInRow="IdPlanoEnsino1" msprop:Generator_ColumnPropNameInTable="IdPlanoEnsino1Column" msprop:Generator_UserColumnName="IdPlanoEnsino1" type="xs:int" />
+              <xs:element name="ano" msprop:Generator_ColumnVarNameInTable="columnano" msprop:Generator_ColumnPropNameInRow="ano" msprop:Generator_ColumnPropNameInTable="anoColumn" msprop:Generator_UserColumnName="ano" type="xs:int" />
+              <xs:element name="semestre_letivo" msprop:Generator_ColumnVarNameInTable="columnsemestre_letivo" msprop:Generator_ColumnPropNameInRow="semestre_letivo" msprop:Generator_ColumnPropNameInTable="semestre_letivoColumn" msprop:Generator_UserColumnName="semestre_letivo" type="xs:int" />
+              <xs:element name="colegiado" msprop:Generator_ColumnVarNameInTable="columncolegiado" msprop:Generator_ColumnPropNameInRow="colegiado" msprop:Generator_ColumnPropNameInTable="colegiadoColumn" msprop:Generator_UserColumnName="colegiado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="possibilidade_integracao" msprop:Generator_ColumnVarNameInTable="columnpossibilidade_integracao" msprop:Generator_ColumnPropNameInRow="possibilidade_integracao" msprop:Generator_ColumnPropNameInTable="possibilidade_integracaoColumn" msprop:Generator_UserColumnName="possibilidade_integracao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="avaliacao_curricular" msprop:Generator_ColumnVarNameInTable="columnavaliacao_curricular" msprop:Generator_ColumnPropNameInRow="avaliacao_curricular" msprop:Generator_ColumnPropNameInTable="avaliacao_curricularColumn" msprop:Generator_UserColumnName="avaliacao_curricular">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="referencias_aprofundamento" msprop:Generator_ColumnVarNameInTable="columnreferencias_aprofundamento" msprop:Generator_ColumnPropNameInRow="referencias_aprofundamento" msprop:Generator_ColumnPropNameInTable="referencias_aprofundamentoColumn" msprop:Generator_UserColumnName="referencias_aprofundamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="conteudo_programado" msprop:Generator_ColumnVarNameInTable="columnconteudo_programado" msprop:Generator_ColumnPropNameInRow="conteudo_programado" msprop:Generator_ColumnPropNameInTable="conteudo_programadoColumn" msprop:Generator_UserColumnName="conteudo_programado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cronograma" msprop:Generator_ColumnVarNameInTable="columncronograma" msprop:Generator_ColumnPropNameInRow="cronograma" msprop:Generator_ColumnPropNameInTable="cronogramaColumn" msprop:Generator_UserColumnName="cronograma">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estrategia_recuperacao" msprop:Generator_ColumnVarNameInTable="columnestrategia_recuperacao" msprop:Generator_ColumnPropNameInRow="estrategia_recuperacao" msprop:Generator_ColumnPropNameInTable="estrategia_recuperacaoColumn" msprop:Generator_UserColumnName="estrategia_recuperacao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="metodologia" msprop:Generator_ColumnVarNameInTable="columnmetodologia" msprop:Generator_ColumnPropNameInRow="metodologia" msprop:Generator_ColumnPropNameInTable="metodologiaColumn" msprop:Generator_UserColumnName="metodologia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_componente_curricular" msprop:Generator_ColumnVarNameInTable="columncodigo_componente_curricular" msprop:Generator_ColumnPropNameInRow="codigo_componente_curricular" msprop:Generator_ColumnPropNameInTable="codigo_componente_curricularColumn" msprop:Generator_UserColumnName="codigo_componente_curricular" type="xs:int" />
+              <xs:element name="IdProfessor1" msprop:Generator_ColumnVarNameInTable="columnIdProfessor1" msprop:Generator_ColumnPropNameInRow="IdProfessor1" msprop:Generator_ColumnPropNameInTable="IdProfessor1Column" msprop:Generator_UserColumnName="IdProfessor1" type="xs:int" />
+              <xs:element name="nome2" msprop:Generator_ColumnVarNameInTable="columnnome2" msprop:Generator_ColumnPropNameInRow="nome2" msprop:Generator_ColumnPropNameInTable="nome2Column" msprop:Generator_UserColumnName="nome2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -530,6 +670,15 @@ SELECT IdProfessor, nome FROM Professor WHERE (IdProfessor = @IdProfessor)</Comm
     <xs:unique name="Professor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Professor" />
       <xs:field xpath="mstns:IdProfessor" />
+    </xs:unique>
+    <xs:unique name="DataPDF_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataPDF" />
+      <xs:field xpath="mstns:IdCurso" />
+      <xs:field xpath="mstns:IdComponenteCurricular" />
+      <xs:field xpath="mstns:IdProfessor" />
+      <xs:field xpath="mstns:IdPlanoEnsino" />
+      <xs:field xpath="mstns:IdPlanoEnsino1" />
+      <xs:field xpath="mstns:IdProfessor1" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
