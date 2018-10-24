@@ -43,5 +43,10 @@ namespace Plano_ensino
         {
             new FormPROFESSOR_PLANO().ShowDialog();
         }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPDF().ShowDialog();
+        }
     }
 }

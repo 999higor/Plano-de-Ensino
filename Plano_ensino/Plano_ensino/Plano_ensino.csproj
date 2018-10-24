@@ -149,6 +149,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RELATORY\PDF.rdlc" />
     <None Include="BD_PlanoEnsinoDataSet.xsc">
       <DependentUpon>BD_PlanoEnsinoDataSet.xsd</DependentUpon>
     </None>
@@ -174,9 +175,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RELATORY\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
