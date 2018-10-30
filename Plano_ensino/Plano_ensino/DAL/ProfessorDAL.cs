@@ -195,5 +195,42 @@ namespace Plano_ensino.DAL
 
             return dataSet;
         }
+
+        public static DataTable atualiza_combo()
+        {
+            //texto com o comando sql que sera executado
+            string cmd = "Select * from Professor";
+
+            //objeto que ira fazer a conexao
+            SqlConnection conn = new SqlConnection(strConnection);
+            //objeto que ira executar o comando sql
+            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = sqlcmd;
+
+            DataTable dataSet = new DataTable();
+
+
+            try
+            {
+                conn.Open();    //abre a conexao com o banco
+                adapter.Fill(dataSet);
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dataSet;
+        }
     }
 }
