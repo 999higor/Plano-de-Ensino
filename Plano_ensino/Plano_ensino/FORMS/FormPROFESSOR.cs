@@ -143,7 +143,7 @@ namespace Plano_ensino.FORMS
             if (selecionado != -1)
             {
                 DataRowView dr = (DataRowView)tabela.Rows[selecionado].DataBoundItem;
-                tbIDPROFESSOR.Text = dr["CRM"].ToString();
+                tbIDPROFESSOR.Text = dr["SIAPE"].ToString();
                 tbNOME.Text = dr["Nome"].ToString();
             }
         }

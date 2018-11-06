@@ -60,6 +60,10 @@
             this.btPESQUISAR = new System.Windows.Forms.Button();
             this.tbPESQUISA = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbNOME = new System.Windows.Forms.TextBox();
+            this.tbPROFESSORES = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +112,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 266);
+            this.label5.Location = new System.Drawing.Point(3, 390);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(204, 20);
             this.label5.TabIndex = 4;
@@ -118,7 +122,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 509);
+            this.label6.Location = new System.Drawing.Point(3, 633);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 20);
             this.label6.TabIndex = 5;
@@ -128,7 +132,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 782);
+            this.label7.Location = new System.Drawing.Point(3, 906);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(241, 20);
             this.label7.TabIndex = 6;
@@ -138,7 +142,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 1826);
+            this.label8.Location = new System.Drawing.Point(3, 1950);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(170, 20);
             this.label8.TabIndex = 7;
@@ -148,7 +152,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 1005);
+            this.label9.Location = new System.Drawing.Point(2, 1129);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 20);
             this.label9.TabIndex = 8;
@@ -158,7 +162,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 1304);
+            this.label10.Location = new System.Drawing.Point(3, 1428);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(204, 20);
             this.label10.TabIndex = 9;
@@ -168,7 +172,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 1555);
+            this.label11.Location = new System.Drawing.Point(3, 1679);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 20);
             this.label11.TabIndex = 10;
@@ -210,7 +214,7 @@
             // tbINTEGRACAO
             // 
             this.tbINTEGRACAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbINTEGRACAO.Location = new System.Drawing.Point(8, 289);
+            this.tbINTEGRACAO.Location = new System.Drawing.Point(7, 413);
             this.tbINTEGRACAO.Multiline = true;
             this.tbINTEGRACAO.Name = "tbINTEGRACAO";
             this.tbINTEGRACAO.Size = new System.Drawing.Size(576, 215);
@@ -219,7 +223,7 @@
             // tbAVALIACAO
             // 
             this.tbAVALIACAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAVALIACAO.Location = new System.Drawing.Point(8, 532);
+            this.tbAVALIACAO.Location = new System.Drawing.Point(7, 656);
             this.tbAVALIACAO.Multiline = true;
             this.tbAVALIACAO.Name = "tbAVALIACAO";
             this.tbAVALIACAO.Size = new System.Drawing.Size(576, 243);
@@ -228,7 +232,7 @@
             // tbREF_APROFUNDAMENTO
             // 
             this.tbREF_APROFUNDAMENTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbREF_APROFUNDAMENTO.Location = new System.Drawing.Point(8, 805);
+            this.tbREF_APROFUNDAMENTO.Location = new System.Drawing.Point(7, 929);
             this.tbREF_APROFUNDAMENTO.Multiline = true;
             this.tbREF_APROFUNDAMENTO.Name = "tbREF_APROFUNDAMENTO";
             this.tbREF_APROFUNDAMENTO.Size = new System.Drawing.Size(576, 197);
@@ -237,7 +241,7 @@
             // tbCONTEUDO_PROGRAMADO
             // 
             this.tbCONTEUDO_PROGRAMADO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCONTEUDO_PROGRAMADO.Location = new System.Drawing.Point(8, 1853);
+            this.tbCONTEUDO_PROGRAMADO.Location = new System.Drawing.Point(7, 1977);
             this.tbCONTEUDO_PROGRAMADO.Multiline = true;
             this.tbCONTEUDO_PROGRAMADO.Name = "tbCONTEUDO_PROGRAMADO";
             this.tbCONTEUDO_PROGRAMADO.Size = new System.Drawing.Size(576, 280);
@@ -246,7 +250,7 @@
             // tbCRONOGRAMA
             // 
             this.tbCRONOGRAMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCRONOGRAMA.Location = new System.Drawing.Point(7, 1029);
+            this.tbCRONOGRAMA.Location = new System.Drawing.Point(6, 1153);
             this.tbCRONOGRAMA.Multiline = true;
             this.tbCRONOGRAMA.Name = "tbCRONOGRAMA";
             this.tbCRONOGRAMA.Size = new System.Drawing.Size(577, 268);
@@ -255,7 +259,7 @@
             // tbRECUPERACAO
             // 
             this.tbRECUPERACAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRECUPERACAO.Location = new System.Drawing.Point(8, 1327);
+            this.tbRECUPERACAO.Location = new System.Drawing.Point(7, 1451);
             this.tbRECUPERACAO.Multiline = true;
             this.tbRECUPERACAO.Name = "tbRECUPERACAO";
             this.tbRECUPERACAO.Size = new System.Drawing.Size(576, 224);
@@ -264,7 +268,7 @@
             // tbMETODOLOGIA
             // 
             this.tbMETODOLOGIA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMETODOLOGIA.Location = new System.Drawing.Point(8, 1578);
+            this.tbMETODOLOGIA.Location = new System.Drawing.Point(7, 1702);
             this.tbMETODOLOGIA.Multiline = true;
             this.tbMETODOLOGIA.Name = "tbMETODOLOGIA";
             this.tbMETODOLOGIA.Size = new System.Drawing.Size(576, 245);
@@ -272,6 +276,8 @@
             // 
             // tabela
             // 
+            this.tabela.AllowUserToAddRows = false;
+            this.tabela.AllowUserToDeleteRows = false;
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabela.Location = new System.Drawing.Point(642, 67);
             this.tabela.Name = "tabela";
@@ -366,6 +372,10 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.tbNOME);
+            this.panel1.Controls.Add(this.tbPROFESSORES);
             this.panel1.Controls.Add(this.tbMETODOLOGIA);
             this.panel1.Controls.Add(this.tbRECUPERACAO);
             this.panel1.Controls.Add(this.tbCRONOGRAMA);
@@ -394,6 +404,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(632, 576);
             this.panel1.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(4, 266);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(172, 20);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Nome / Professor / Ano";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(4, 318);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 20);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Professores";
+            // 
+            // tbNOME
+            // 
+            this.tbNOME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNOME.Location = new System.Drawing.Point(7, 289);
+            this.tbNOME.Name = "tbNOME";
+            this.tbNOME.Size = new System.Drawing.Size(576, 26);
+            this.tbNOME.TabIndex = 30;
+            // 
+            // tbPROFESSORES
+            // 
+            this.tbPROFESSORES.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPROFESSORES.Location = new System.Drawing.Point(7, 341);
+            this.tbPROFESSORES.Name = "tbPROFESSORES";
+            this.tbPROFESSORES.Size = new System.Drawing.Size(576, 26);
+            this.tbPROFESSORES.TabIndex = 29;
             // 
             // FormPLANO_ENSINO
             // 
@@ -454,5 +500,9 @@
         private System.Windows.Forms.Button btPESQUISAR;
         private System.Windows.Forms.TextBox tbPESQUISA;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbNOME;
+        private System.Windows.Forms.TextBox tbPROFESSORES;
     }
 }

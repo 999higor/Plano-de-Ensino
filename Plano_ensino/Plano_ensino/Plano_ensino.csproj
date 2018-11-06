@@ -153,6 +153,7 @@
       <DependentUpon>FormPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RELATORY\PDF.rdlc" />
+    <EmbeddedResource Include="RELATORY\PDF_teste.rdlc" />
     <None Include="BD_PlanoEnsinoDataSet.xsc">
       <DependentUpon>BD_PlanoEnsinoDataSet.xsd</DependentUpon>
     </None>

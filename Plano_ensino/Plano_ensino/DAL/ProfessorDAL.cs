@@ -127,7 +127,7 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT IdProfessor AS CRM, nome AS Nome " +
+            string cmd = "SELECT IdProfessor AS SIAPE, nome AS Nome " +
                             "FROM Professor";
                             //WHERE(nome = @texto)";
 
@@ -162,7 +162,7 @@ namespace Plano_ensino.DAL
         public static DataSet Pesquisar(String texto)
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT IdProfessor AS CRM, nome AS Nome "+
+            string cmd = "SELECT IdProfessor AS SIAPE, nome AS Nome "+
                         " FROM Professor "+
                         " WHERE(nome LIKE @texto)";
 

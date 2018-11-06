@@ -14,13 +14,13 @@ namespace Plano_ensino.DAL
 
         public static int Inserir(int ano, int semestre, string colegiado, string integracao, string avaliacao,
             string ref_aprofundamento, string conteudo_programado, string cronograma, string recuperacao,
-            string metodologia, int comp_curricular)
+            string metodologia, int comp_curricular, string nome, string professor)
         {
             //texto com o comando que sera executado
             string cmd = "INSERT INTO PlanoEnsino (ano ,semestre_letivo, colegiado, possibilidade_integracao, avaliacao_curricular, referencias_aprofundamento, "+
-                " conteudo_programado, cronograma, estrategia_recuperacao, metodologia, codigo_componente_curricular) "+
+                " conteudo_programado, cronograma, estrategia_recuperacao, metodologia, codigo_componente_curricular, nome, professores) "+
                 " VALUES (@ano ,@semestre, @colegiado, @possibilidade_integracao, @avaliacao_curricular, @referencias_aprofundamento, "+
-                " @conteudo_programado, @cronograma, @estrategia_recuperacao, @metodologia, @codigo_componente_curricular)";
+                " @conteudo_programado, @cronograma, @estrategia_recuperacao, @metodologia, @codigo_componente_curricular, @nome, @professores)";
             int res = 0;
 
             // objeto que fara a conexao
@@ -41,6 +41,8 @@ namespace Plano_ensino.DAL
             sqlcmd.Parameters.AddWithValue("@estrategia_recuperacao", recuperacao);
             sqlcmd.Parameters.AddWithValue("@metodologia", metodologia);
             sqlcmd.Parameters.AddWithValue("@codigo_componente_curricular", comp_curricular);
+            sqlcmd.Parameters.AddWithValue("@nome", nome);
+            sqlcmd.Parameters.AddWithValue("@professores", professor);
 
             try
             {
@@ -64,12 +66,12 @@ namespace Plano_ensino.DAL
 
         public static int Alterar(int idPlano, int ano, int semestre, string colegiado, string integracao, string avaliacao,
             string ref_aprofundamento, string conteudo_programado, string cronograma, string recuperacao,
-            string metodologia, int comp_curricular)
+            string metodologia, int comp_curricular, string nome, string professor)
         {
             //texto com o comando que sera executado
             string cmd = "UPDATE PlanoEnsino " +
                 "SET ano = @ano, semestre_letivo = @semestre, colegiado = @colegiado, possibilidade_integracao = @possibilidade_integracao, avaliacao_curricular = @avaliacao_curricular, referencias_aprofundamento = @referencias_aprofundamento, " +
-                " conteudo_programado = @conteudo_programado, cronograma = @cronograma, estrategia_recuperacao = @estrategia_recuperacao, metodologia = @metodologia, codigo_componente_curricular = @codigo_componente_curricular WHERE IdPlanoEnsino = @IdPlanoEnsino";
+                " conteudo_programado = @conteudo_programado, cronograma = @cronograma, estrategia_recuperacao = @estrategia_recuperacao, metodologia = @metodologia, codigo_componente_curricular = @codigo_componente_curricular, @nome = nome, @professores = professores WHERE IdPlanoEnsino = @IdPlanoEnsino";
             int res = 0;
 
             // objeto que fara a conexao
@@ -92,6 +94,8 @@ namespace Plano_ensino.DAL
             sqlcmd.Parameters.AddWithValue("@estrategia_recuperacao", recuperacao);
             sqlcmd.Parameters.AddWithValue("@metodologia", metodologia);
             sqlcmd.Parameters.AddWithValue("@codigo_componente_curricular", comp_curricular);
+            sqlcmd.Parameters.AddWithValue("@nome", nome);
+            sqlcmd.Parameters.AddWithValue("@professores", professor);
 
 
             try
@@ -155,7 +159,7 @@ namespace Plano_ensino.DAL
             string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.colegiado AS Colegiado, " +
                 " PlanoEnsino.possibilidade_integracao AS Integração, PlanoEnsino.avaliacao_curricular AS Avaliação, " +
                 " PlanoEnsino.referencias_aprofundamento AS [Ref - Aprofundamento], PlanoEnsino.conteudo_programado AS Conteúdo, PlanoEnsino.cronograma AS Cronograma, " +
-                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP] " +
+                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome, PlanoEnsino.professores AS Professores " +
                 " FROM PlanoEnsino INNER JOIN "+
                 " ComponenteCurricular ON PlanoEnsino.codigo_componente_curricular = ComponenteCurricular.IdComponenteCurricular";
                 
@@ -195,10 +199,10 @@ namespace Plano_ensino.DAL
             string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.colegiado AS Colegiado, " +
                 " PlanoEnsino.possibilidade_integracao AS Integração, PlanoEnsino.avaliacao_curricular AS Avaliação, " +
                 " PlanoEnsino.referencias_aprofundamento AS [Ref - Aprofundamento], PlanoEnsino.conteudo_programado AS Conteúdo, PlanoEnsino.cronograma AS Cronograma, " +
-                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP] " +
+                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome, PlanoEnsino.professores AS Professores " +
                 " FROM PlanoEnsino INNER JOIN " +
                 " ComponenteCurricular ON PlanoEnsino.codigo_componente_curricular = ComponenteCurricular.IdComponenteCurricular " +
-                " WHERE(PlanoEnsino.ano LIKE @texto)";
+                " WHERE(PlanoEnsino.nome LIKE @texto)";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);

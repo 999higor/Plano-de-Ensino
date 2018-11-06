@@ -176,6 +176,10 @@ namespace Plano_ensino.FORMS
                 tb_HRR_PRESENCIAL.Text = dr["HR - Presencial"].ToString();
                 cbCURSO.SelectedValue = Convert.ToInt16(dr["Curso"].ToString());
             }
+            else
+            {
+
+            }
         }
 
         private void atualizaPesquisa()

@@ -34,6 +34,8 @@ namespace Plano_ensino {
         
         private ProfessorDataTable tableProfessor;
         
+        private pdfDataTable tablepdf;
+        
         private global::System.Data.DataRelation relationPK_COMP_CURSO;
         
         private global::System.Data.DataRelation relationFK_PLANO_COMP;
@@ -41,6 +43,10 @@ namespace Plano_ensino {
         private global::System.Data.DataRelation relationFK_PLANO_PLANO;
         
         private global::System.Data.DataRelation relationFK_PLANO_PROFESSOR;
+        
+        private global::System.Data.DataRelation relationFK_PLANO_PLANO1;
+        
+        private global::System.Data.DataRelation relationFK_PLANO_COMP1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -84,6 +90,9 @@ namespace Plano_ensino {
                 }
                 if ((ds.Tables["Professor"] != null)) {
                     base.Tables.Add(new ProfessorDataTable(ds.Tables["Professor"]));
+                }
+                if ((ds.Tables["pdf"] != null)) {
+                    base.Tables.Add(new pdfDataTable(ds.Tables["pdf"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -150,6 +159,16 @@ namespace Plano_ensino {
         public ProfessorDataTable Professor {
             get {
                 return this.tableProfessor;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public pdfDataTable pdf {
+            get {
+                return this.tablepdf;
             }
         }
         
@@ -235,6 +254,9 @@ namespace Plano_ensino {
                 if ((ds.Tables["Professor"] != null)) {
                     base.Tables.Add(new ProfessorDataTable(ds.Tables["Professor"]));
                 }
+                if ((ds.Tables["pdf"] != null)) {
+                    base.Tables.Add(new pdfDataTable(ds.Tables["pdf"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -298,10 +320,18 @@ namespace Plano_ensino {
                     this.tableProfessor.InitVars();
                 }
             }
+            this.tablepdf = ((pdfDataTable)(base.Tables["pdf"]));
+            if ((initTable == true)) {
+                if ((this.tablepdf != null)) {
+                    this.tablepdf.InitVars();
+                }
+            }
             this.relationPK_COMP_CURSO = this.Relations["PK_COMP_CURSO"];
             this.relationFK_PLANO_COMP = this.Relations["FK_PLANO_COMP"];
             this.relationFK_PLANO_PLANO = this.Relations["FK_PLANO_PLANO"];
             this.relationFK_PLANO_PROFESSOR = this.Relations["FK_PLANO_PROFESSOR"];
+            this.relationFK_PLANO_PLANO1 = this.Relations["FK_PLANO_PLANO1"];
+            this.relationFK_PLANO_COMP1 = this.Relations["FK_PLANO_COMP1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -322,6 +352,8 @@ namespace Plano_ensino {
             base.Tables.Add(this.tablePlanoEnsino_Professor);
             this.tableProfessor = new ProfessorDataTable();
             base.Tables.Add(this.tableProfessor);
+            this.tablepdf = new pdfDataTable();
+            base.Tables.Add(this.tablepdf);
             this.relationPK_COMP_CURSO = new global::System.Data.DataRelation("PK_COMP_CURSO", new global::System.Data.DataColumn[] {
                         this.tableCurso.IdCursoColumn}, new global::System.Data.DataColumn[] {
                         this.tableComponenteCurricular.codigo_cursoColumn}, false);
@@ -338,6 +370,14 @@ namespace Plano_ensino {
                         this.tableProfessor.IdProfessorColumn}, new global::System.Data.DataColumn[] {
                         this.tablePlanoEnsino_Professor.IdProfessorColumn}, false);
             this.Relations.Add(this.relationFK_PLANO_PROFESSOR);
+            this.relationFK_PLANO_PLANO1 = new global::System.Data.DataRelation("FK_PLANO_PLANO1", new global::System.Data.DataColumn[] {
+                        this.tablepdf.IdPlanoEnsinoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePlanoEnsino_Professor.IdPlanoEnsinoColumn}, false);
+            this.Relations.Add(this.relationFK_PLANO_PLANO1);
+            this.relationFK_PLANO_COMP1 = new global::System.Data.DataRelation("FK_PLANO_COMP1", new global::System.Data.DataColumn[] {
+                        this.tableComponenteCurricular.IdComponenteCurricularColumn}, new global::System.Data.DataColumn[] {
+                        this.tablepdf.codigo_componente_curricularColumn}, false);
+            this.Relations.Add(this.relationFK_PLANO_COMP1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -367,6 +407,12 @@ namespace Plano_ensino {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeProfessor() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializepdf() {
             return false;
         }
         
@@ -439,6 +485,9 @@ namespace Plano_ensino {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void ProfessorRowChangeEventHandler(object sender, ProfessorRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void pdfRowChangeEventHandler(object sender, pdfRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2174,6 +2223,780 @@ namespace Plano_ensino {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class pdfDataTable : global::System.Data.TypedTableBase<pdfRow> {
+            
+            private global::System.Data.DataColumn columnIdPlanoEnsino;
+            
+            private global::System.Data.DataColumn columnano;
+            
+            private global::System.Data.DataColumn columnsemestre_letivo;
+            
+            private global::System.Data.DataColumn columncolegiado;
+            
+            private global::System.Data.DataColumn columnpossibilidade_integracao;
+            
+            private global::System.Data.DataColumn columnavaliacao_curricular;
+            
+            private global::System.Data.DataColumn columnreferencias_aprofundamento;
+            
+            private global::System.Data.DataColumn columnconteudo_programado;
+            
+            private global::System.Data.DataColumn columncronograma;
+            
+            private global::System.Data.DataColumn columnestrategia_recuperacao;
+            
+            private global::System.Data.DataColumn columnmetodologia;
+            
+            private global::System.Data.DataColumn columncodigo_componente_curricular;
+            
+            private global::System.Data.DataColumn columnprofessores;
+            
+            private global::System.Data.DataColumn columnnome;
+            
+            private global::System.Data.DataColumn columnIdComponenteCurricular;
+            
+            private global::System.Data.DataColumn columnsemestre;
+            
+            private global::System.Data.DataColumn columnobjetivo;
+            
+            private global::System.Data.DataColumn columnmodalidade_oferta;
+            
+            private global::System.Data.DataColumn columnementa;
+            
+            private global::System.Data.DataColumn columnreferencias_basicas;
+            
+            private global::System.Data.DataColumn columnreferencias_complementares;
+            
+            private global::System.Data.DataColumn columnhora_aula_distancia;
+            
+            private global::System.Data.DataColumn columnhora_aula_presencial;
+            
+            private global::System.Data.DataColumn columnhora_relogio_distancia;
+            
+            private global::System.Data.DataColumn columnhora_relogio_presencial;
+            
+            private global::System.Data.DataColumn columncodigo_curso;
+            
+            private global::System.Data.DataColumn columnIdCurso;
+            
+            private global::System.Data.DataColumn columnIdPlano;
+            
+            private global::System.Data.DataColumn columnnomeComp;
+            
+            private global::System.Data.DataColumn columnnomeCurso;
+            
+            private global::System.Data.DataColumn columnobjetivoCurso;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfDataTable() {
+                this.TableName = "pdf";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal pdfDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected pdfDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdPlanoEnsinoColumn {
+                get {
+                    return this.columnIdPlanoEnsino;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn anoColumn {
+                get {
+                    return this.columnano;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn semestre_letivoColumn {
+                get {
+                    return this.columnsemestre_letivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn colegiadoColumn {
+                get {
+                    return this.columncolegiado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn possibilidade_integracaoColumn {
+                get {
+                    return this.columnpossibilidade_integracao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn avaliacao_curricularColumn {
+                get {
+                    return this.columnavaliacao_curricular;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn referencias_aprofundamentoColumn {
+                get {
+                    return this.columnreferencias_aprofundamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn conteudo_programadoColumn {
+                get {
+                    return this.columnconteudo_programado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cronogramaColumn {
+                get {
+                    return this.columncronograma;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn estrategia_recuperacaoColumn {
+                get {
+                    return this.columnestrategia_recuperacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn metodologiaColumn {
+                get {
+                    return this.columnmetodologia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn codigo_componente_curricularColumn {
+                get {
+                    return this.columncodigo_componente_curricular;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn professoresColumn {
+                get {
+                    return this.columnprofessores;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nomeColumn {
+                get {
+                    return this.columnnome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdComponenteCurricularColumn {
+                get {
+                    return this.columnIdComponenteCurricular;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn semestreColumn {
+                get {
+                    return this.columnsemestre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn objetivoColumn {
+                get {
+                    return this.columnobjetivo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn modalidade_ofertaColumn {
+                get {
+                    return this.columnmodalidade_oferta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ementaColumn {
+                get {
+                    return this.columnementa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn referencias_basicasColumn {
+                get {
+                    return this.columnreferencias_basicas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn referencias_complementaresColumn {
+                get {
+                    return this.columnreferencias_complementares;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn hora_aula_distanciaColumn {
+                get {
+                    return this.columnhora_aula_distancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn hora_aula_presencialColumn {
+                get {
+                    return this.columnhora_aula_presencial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn hora_relogio_distanciaColumn {
+                get {
+                    return this.columnhora_relogio_distancia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn hora_relogio_presencialColumn {
+                get {
+                    return this.columnhora_relogio_presencial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn codigo_cursoColumn {
+                get {
+                    return this.columncodigo_curso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdCursoColumn {
+                get {
+                    return this.columnIdCurso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdPlanoColumn {
+                get {
+                    return this.columnIdPlano;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nomeCompColumn {
+                get {
+                    return this.columnnomeComp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn nomeCursoColumn {
+                get {
+                    return this.columnnomeCurso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn objetivoCursoColumn {
+                get {
+                    return this.columnobjetivoCurso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow this[int index] {
+                get {
+                    return ((pdfRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event pdfRowChangeEventHandler pdfRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event pdfRowChangeEventHandler pdfRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event pdfRowChangeEventHandler pdfRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event pdfRowChangeEventHandler pdfRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddpdfRow(pdfRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow AddpdfRow(
+                        int ano, 
+                        int semestre_letivo, 
+                        string colegiado, 
+                        string possibilidade_integracao, 
+                        string avaliacao_curricular, 
+                        string referencias_aprofundamento, 
+                        string conteudo_programado, 
+                        string cronograma, 
+                        string estrategia_recuperacao, 
+                        string metodologia, 
+                        ComponenteCurricularRow parentComponenteCurricularRowByFK_PLANO_COMP1, 
+                        string professores, 
+                        string nome, 
+                        int semestre, 
+                        string objetivo, 
+                        string modalidade_oferta, 
+                        string ementa, 
+                        string referencias_basicas, 
+                        string referencias_complementares, 
+                        int hora_aula_distancia, 
+                        int hora_aula_presencial, 
+                        int hora_relogio_distancia, 
+                        int hora_relogio_presencial, 
+                        int codigo_curso, 
+                        string nomeComp, 
+                        string nomeCurso, 
+                        string objetivoCurso) {
+                pdfRow rowpdfRow = ((pdfRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        ano,
+                        semestre_letivo,
+                        colegiado,
+                        possibilidade_integracao,
+                        avaliacao_curricular,
+                        referencias_aprofundamento,
+                        conteudo_programado,
+                        cronograma,
+                        estrategia_recuperacao,
+                        metodologia,
+                        null,
+                        professores,
+                        nome,
+                        null,
+                        semestre,
+                        objetivo,
+                        modalidade_oferta,
+                        ementa,
+                        referencias_basicas,
+                        referencias_complementares,
+                        hora_aula_distancia,
+                        hora_aula_presencial,
+                        hora_relogio_distancia,
+                        hora_relogio_presencial,
+                        codigo_curso,
+                        null,
+                        null,
+                        nomeComp,
+                        nomeCurso,
+                        objetivoCurso};
+                if ((parentComponenteCurricularRowByFK_PLANO_COMP1 != null)) {
+                    columnValuesArray[11] = parentComponenteCurricularRowByFK_PLANO_COMP1[0];
+                }
+                rowpdfRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpdfRow);
+                return rowpdfRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow FindByIdPlanoEnsinoIdComponenteCurricularIdCursoIdPlano(int IdPlanoEnsino, int IdComponenteCurricular, int IdCurso, int IdPlano) {
+                return ((pdfRow)(this.Rows.Find(new object[] {
+                            IdPlanoEnsino,
+                            IdComponenteCurricular,
+                            IdCurso,
+                            IdPlano})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                pdfDataTable cln = ((pdfDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new pdfDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIdPlanoEnsino = base.Columns["IdPlanoEnsino"];
+                this.columnano = base.Columns["ano"];
+                this.columnsemestre_letivo = base.Columns["semestre_letivo"];
+                this.columncolegiado = base.Columns["colegiado"];
+                this.columnpossibilidade_integracao = base.Columns["possibilidade_integracao"];
+                this.columnavaliacao_curricular = base.Columns["avaliacao_curricular"];
+                this.columnreferencias_aprofundamento = base.Columns["referencias_aprofundamento"];
+                this.columnconteudo_programado = base.Columns["conteudo_programado"];
+                this.columncronograma = base.Columns["cronograma"];
+                this.columnestrategia_recuperacao = base.Columns["estrategia_recuperacao"];
+                this.columnmetodologia = base.Columns["metodologia"];
+                this.columncodigo_componente_curricular = base.Columns["codigo_componente_curricular"];
+                this.columnprofessores = base.Columns["professores"];
+                this.columnnome = base.Columns["nome"];
+                this.columnIdComponenteCurricular = base.Columns["IdComponenteCurricular"];
+                this.columnsemestre = base.Columns["semestre"];
+                this.columnobjetivo = base.Columns["objetivo"];
+                this.columnmodalidade_oferta = base.Columns["modalidade_oferta"];
+                this.columnementa = base.Columns["ementa"];
+                this.columnreferencias_basicas = base.Columns["referencias_basicas"];
+                this.columnreferencias_complementares = base.Columns["referencias_complementares"];
+                this.columnhora_aula_distancia = base.Columns["hora_aula_distancia"];
+                this.columnhora_aula_presencial = base.Columns["hora_aula_presencial"];
+                this.columnhora_relogio_distancia = base.Columns["hora_relogio_distancia"];
+                this.columnhora_relogio_presencial = base.Columns["hora_relogio_presencial"];
+                this.columncodigo_curso = base.Columns["codigo_curso"];
+                this.columnIdCurso = base.Columns["IdCurso"];
+                this.columnIdPlano = base.Columns["IdPlano"];
+                this.columnnomeComp = base.Columns["nomeComp"];
+                this.columnnomeCurso = base.Columns["nomeCurso"];
+                this.columnobjetivoCurso = base.Columns["objetivoCurso"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIdPlanoEnsino = new global::System.Data.DataColumn("IdPlanoEnsino", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdPlanoEnsino);
+                this.columnano = new global::System.Data.DataColumn("ano", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnano);
+                this.columnsemestre_letivo = new global::System.Data.DataColumn("semestre_letivo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemestre_letivo);
+                this.columncolegiado = new global::System.Data.DataColumn("colegiado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolegiado);
+                this.columnpossibilidade_integracao = new global::System.Data.DataColumn("possibilidade_integracao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpossibilidade_integracao);
+                this.columnavaliacao_curricular = new global::System.Data.DataColumn("avaliacao_curricular", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnavaliacao_curricular);
+                this.columnreferencias_aprofundamento = new global::System.Data.DataColumn("referencias_aprofundamento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreferencias_aprofundamento);
+                this.columnconteudo_programado = new global::System.Data.DataColumn("conteudo_programado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconteudo_programado);
+                this.columncronograma = new global::System.Data.DataColumn("cronograma", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncronograma);
+                this.columnestrategia_recuperacao = new global::System.Data.DataColumn("estrategia_recuperacao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestrategia_recuperacao);
+                this.columnmetodologia = new global::System.Data.DataColumn("metodologia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmetodologia);
+                this.columncodigo_componente_curricular = new global::System.Data.DataColumn("codigo_componente_curricular", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_componente_curricular);
+                this.columnprofessores = new global::System.Data.DataColumn("professores", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprofessores);
+                this.columnnome = new global::System.Data.DataColumn("nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnome);
+                this.columnIdComponenteCurricular = new global::System.Data.DataColumn("IdComponenteCurricular", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdComponenteCurricular);
+                this.columnsemestre = new global::System.Data.DataColumn("semestre", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemestre);
+                this.columnobjetivo = new global::System.Data.DataColumn("objetivo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobjetivo);
+                this.columnmodalidade_oferta = new global::System.Data.DataColumn("modalidade_oferta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodalidade_oferta);
+                this.columnementa = new global::System.Data.DataColumn("ementa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnementa);
+                this.columnreferencias_basicas = new global::System.Data.DataColumn("referencias_basicas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreferencias_basicas);
+                this.columnreferencias_complementares = new global::System.Data.DataColumn("referencias_complementares", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreferencias_complementares);
+                this.columnhora_aula_distancia = new global::System.Data.DataColumn("hora_aula_distancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhora_aula_distancia);
+                this.columnhora_aula_presencial = new global::System.Data.DataColumn("hora_aula_presencial", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhora_aula_presencial);
+                this.columnhora_relogio_distancia = new global::System.Data.DataColumn("hora_relogio_distancia", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhora_relogio_distancia);
+                this.columnhora_relogio_presencial = new global::System.Data.DataColumn("hora_relogio_presencial", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhora_relogio_presencial);
+                this.columncodigo_curso = new global::System.Data.DataColumn("codigo_curso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_curso);
+                this.columnIdCurso = new global::System.Data.DataColumn("IdCurso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCurso);
+                this.columnIdPlano = new global::System.Data.DataColumn("IdPlano", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdPlano);
+                this.columnnomeComp = new global::System.Data.DataColumn("nomeComp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnomeComp);
+                this.columnnomeCurso = new global::System.Data.DataColumn("nomeCurso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnomeCurso);
+                this.columnobjetivoCurso = new global::System.Data.DataColumn("objetivoCurso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobjetivoCurso);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdPlanoEnsino,
+                                this.columnIdComponenteCurricular,
+                                this.columnIdCurso,
+                                this.columnIdPlano}, true));
+                this.columnIdPlanoEnsino.AutoIncrement = true;
+                this.columnIdPlanoEnsino.AutoIncrementSeed = -1;
+                this.columnIdPlanoEnsino.AutoIncrementStep = -1;
+                this.columnIdPlanoEnsino.AllowDBNull = false;
+                this.columnIdPlanoEnsino.ReadOnly = true;
+                this.columnano.AllowDBNull = false;
+                this.columnsemestre_letivo.AllowDBNull = false;
+                this.columncolegiado.AllowDBNull = false;
+                this.columncolegiado.MaxLength = 50;
+                this.columnpossibilidade_integracao.AllowDBNull = false;
+                this.columnpossibilidade_integracao.MaxLength = 2147483647;
+                this.columnavaliacao_curricular.AllowDBNull = false;
+                this.columnavaliacao_curricular.MaxLength = 2147483647;
+                this.columnreferencias_aprofundamento.MaxLength = 2147483647;
+                this.columnconteudo_programado.AllowDBNull = false;
+                this.columnconteudo_programado.MaxLength = 2147483647;
+                this.columncronograma.AllowDBNull = false;
+                this.columncronograma.MaxLength = 2147483647;
+                this.columnestrategia_recuperacao.AllowDBNull = false;
+                this.columnestrategia_recuperacao.MaxLength = 2147483647;
+                this.columnmetodologia.AllowDBNull = false;
+                this.columnmetodologia.MaxLength = 2147483647;
+                this.columncodigo_componente_curricular.AllowDBNull = false;
+                this.columnprofessores.MaxLength = 2147483647;
+                this.columnnome.AllowDBNull = false;
+                this.columnnome.MaxLength = 2147483647;
+                this.columnIdComponenteCurricular.AutoIncrement = true;
+                this.columnIdComponenteCurricular.AutoIncrementSeed = -1;
+                this.columnIdComponenteCurricular.AutoIncrementStep = -1;
+                this.columnIdComponenteCurricular.AllowDBNull = false;
+                this.columnIdComponenteCurricular.ReadOnly = true;
+                this.columnsemestre.AllowDBNull = false;
+                this.columnobjetivo.AllowDBNull = false;
+                this.columnobjetivo.MaxLength = 2147483647;
+                this.columnmodalidade_oferta.AllowDBNull = false;
+                this.columnmodalidade_oferta.MaxLength = 2147483647;
+                this.columnementa.AllowDBNull = false;
+                this.columnementa.MaxLength = 2147483647;
+                this.columnreferencias_basicas.AllowDBNull = false;
+                this.columnreferencias_basicas.MaxLength = 2147483647;
+                this.columnreferencias_complementares.MaxLength = 2147483647;
+                this.columnhora_aula_distancia.AllowDBNull = false;
+                this.columnhora_aula_presencial.AllowDBNull = false;
+                this.columnhora_relogio_distancia.AllowDBNull = false;
+                this.columnhora_relogio_presencial.AllowDBNull = false;
+                this.columncodigo_curso.AllowDBNull = false;
+                this.columnIdCurso.AutoIncrement = true;
+                this.columnIdCurso.AutoIncrementSeed = -1;
+                this.columnIdCurso.AutoIncrementStep = -1;
+                this.columnIdCurso.AllowDBNull = false;
+                this.columnIdCurso.ReadOnly = true;
+                this.columnIdPlano.AutoIncrement = true;
+                this.columnIdPlano.AutoIncrementSeed = -1;
+                this.columnIdPlano.AutoIncrementStep = -1;
+                this.columnIdPlano.AllowDBNull = false;
+                this.columnIdPlano.ReadOnly = true;
+                this.columnnomeComp.AllowDBNull = false;
+                this.columnnomeComp.MaxLength = 200;
+                this.columnnomeCurso.AllowDBNull = false;
+                this.columnnomeCurso.MaxLength = 250;
+                this.columnobjetivoCurso.AllowDBNull = false;
+                this.columnobjetivoCurso.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow NewpdfRow() {
+                return ((pdfRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new pdfRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(pdfRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.pdfRowChanged != null)) {
+                    this.pdfRowChanged(this, new pdfRowChangeEvent(((pdfRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.pdfRowChanging != null)) {
+                    this.pdfRowChanging(this, new pdfRowChangeEvent(((pdfRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.pdfRowDeleted != null)) {
+                    this.pdfRowDeleted(this, new pdfRowChangeEvent(((pdfRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.pdfRowDeleting != null)) {
+                    this.pdfRowDeleting(this, new pdfRowChangeEvent(((pdfRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemovepdfRow(pdfRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BD_PlanoEnsinoDataSet ds = new BD_PlanoEnsinoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "pdfDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ComponenteCurricularRow : global::System.Data.DataRow {
@@ -2367,6 +3190,17 @@ namespace Plano_ensino {
                 }
                 else {
                     return ((PlanoEnsinoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PLANO_COMP"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow[] GetpdfRows() {
+                if ((this.Table.ChildRelations["FK_PLANO_COMP1"] == null)) {
+                    return new pdfRow[0];
+                }
+                else {
+                    return ((pdfRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PLANO_COMP1"])));
                 }
             }
         }
@@ -2690,6 +3524,17 @@ namespace Plano_ensino {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_PLANO_PROFESSOR"]);
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow pdfRow {
+                get {
+                    return ((pdfRow)(this.GetParentRow(this.Table.ParentRelations["FK_PLANO_PLANO1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PLANO_PLANO1"]);
+                }
+            }
         }
         
         /// <summary>
@@ -2753,6 +3598,435 @@ namespace Plano_ensino {
                 }
                 else {
                     return ((PlanoEnsino_ProfessorRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PLANO_PROFESSOR"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class pdfRow : global::System.Data.DataRow {
+            
+            private pdfDataTable tablepdf;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal pdfRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablepdf = ((pdfDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdPlanoEnsino {
+                get {
+                    return ((int)(this[this.tablepdf.IdPlanoEnsinoColumn]));
+                }
+                set {
+                    this[this.tablepdf.IdPlanoEnsinoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ano {
+                get {
+                    return ((int)(this[this.tablepdf.anoColumn]));
+                }
+                set {
+                    this[this.tablepdf.anoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int semestre_letivo {
+                get {
+                    return ((int)(this[this.tablepdf.semestre_letivoColumn]));
+                }
+                set {
+                    this[this.tablepdf.semestre_letivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string colegiado {
+                get {
+                    return ((string)(this[this.tablepdf.colegiadoColumn]));
+                }
+                set {
+                    this[this.tablepdf.colegiadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string possibilidade_integracao {
+                get {
+                    return ((string)(this[this.tablepdf.possibilidade_integracaoColumn]));
+                }
+                set {
+                    this[this.tablepdf.possibilidade_integracaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string avaliacao_curricular {
+                get {
+                    return ((string)(this[this.tablepdf.avaliacao_curricularColumn]));
+                }
+                set {
+                    this[this.tablepdf.avaliacao_curricularColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string referencias_aprofundamento {
+                get {
+                    try {
+                        return ((string)(this[this.tablepdf.referencias_aprofundamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'referencias_aprofundamento\' in table \'pdf\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepdf.referencias_aprofundamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string conteudo_programado {
+                get {
+                    return ((string)(this[this.tablepdf.conteudo_programadoColumn]));
+                }
+                set {
+                    this[this.tablepdf.conteudo_programadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string cronograma {
+                get {
+                    return ((string)(this[this.tablepdf.cronogramaColumn]));
+                }
+                set {
+                    this[this.tablepdf.cronogramaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string estrategia_recuperacao {
+                get {
+                    return ((string)(this[this.tablepdf.estrategia_recuperacaoColumn]));
+                }
+                set {
+                    this[this.tablepdf.estrategia_recuperacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string metodologia {
+                get {
+                    return ((string)(this[this.tablepdf.metodologiaColumn]));
+                }
+                set {
+                    this[this.tablepdf.metodologiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int codigo_componente_curricular {
+                get {
+                    return ((int)(this[this.tablepdf.codigo_componente_curricularColumn]));
+                }
+                set {
+                    this[this.tablepdf.codigo_componente_curricularColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string professores {
+                get {
+                    try {
+                        return ((string)(this[this.tablepdf.professoresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'professores\' in table \'pdf\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepdf.professoresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string nome {
+                get {
+                    return ((string)(this[this.tablepdf.nomeColumn]));
+                }
+                set {
+                    this[this.tablepdf.nomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdComponenteCurricular {
+                get {
+                    return ((int)(this[this.tablepdf.IdComponenteCurricularColumn]));
+                }
+                set {
+                    this[this.tablepdf.IdComponenteCurricularColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int semestre {
+                get {
+                    return ((int)(this[this.tablepdf.semestreColumn]));
+                }
+                set {
+                    this[this.tablepdf.semestreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string objetivo {
+                get {
+                    return ((string)(this[this.tablepdf.objetivoColumn]));
+                }
+                set {
+                    this[this.tablepdf.objetivoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string modalidade_oferta {
+                get {
+                    return ((string)(this[this.tablepdf.modalidade_ofertaColumn]));
+                }
+                set {
+                    this[this.tablepdf.modalidade_ofertaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ementa {
+                get {
+                    return ((string)(this[this.tablepdf.ementaColumn]));
+                }
+                set {
+                    this[this.tablepdf.ementaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string referencias_basicas {
+                get {
+                    return ((string)(this[this.tablepdf.referencias_basicasColumn]));
+                }
+                set {
+                    this[this.tablepdf.referencias_basicasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string referencias_complementares {
+                get {
+                    try {
+                        return ((string)(this[this.tablepdf.referencias_complementaresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'referencias_complementares\' in table \'pdf\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepdf.referencias_complementaresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int hora_aula_distancia {
+                get {
+                    return ((int)(this[this.tablepdf.hora_aula_distanciaColumn]));
+                }
+                set {
+                    this[this.tablepdf.hora_aula_distanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int hora_aula_presencial {
+                get {
+                    return ((int)(this[this.tablepdf.hora_aula_presencialColumn]));
+                }
+                set {
+                    this[this.tablepdf.hora_aula_presencialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int hora_relogio_distancia {
+                get {
+                    return ((int)(this[this.tablepdf.hora_relogio_distanciaColumn]));
+                }
+                set {
+                    this[this.tablepdf.hora_relogio_distanciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int hora_relogio_presencial {
+                get {
+                    return ((int)(this[this.tablepdf.hora_relogio_presencialColumn]));
+                }
+                set {
+                    this[this.tablepdf.hora_relogio_presencialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int codigo_curso {
+                get {
+                    return ((int)(this[this.tablepdf.codigo_cursoColumn]));
+                }
+                set {
+                    this[this.tablepdf.codigo_cursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdCurso {
+                get {
+                    return ((int)(this[this.tablepdf.IdCursoColumn]));
+                }
+                set {
+                    this[this.tablepdf.IdCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdPlano {
+                get {
+                    return ((int)(this[this.tablepdf.IdPlanoColumn]));
+                }
+                set {
+                    this[this.tablepdf.IdPlanoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string nomeComp {
+                get {
+                    return ((string)(this[this.tablepdf.nomeCompColumn]));
+                }
+                set {
+                    this[this.tablepdf.nomeCompColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string nomeCurso {
+                get {
+                    return ((string)(this[this.tablepdf.nomeCursoColumn]));
+                }
+                set {
+                    this[this.tablepdf.nomeCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string objetivoCurso {
+                get {
+                    return ((string)(this[this.tablepdf.objetivoCursoColumn]));
+                }
+                set {
+                    this[this.tablepdf.objetivoCursoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ComponenteCurricularRow ComponenteCurricularRow {
+                get {
+                    return ((ComponenteCurricularRow)(this.GetParentRow(this.Table.ParentRelations["FK_PLANO_COMP1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PLANO_COMP1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isreferencias_aprofundamentoNull() {
+                return this.IsNull(this.tablepdf.referencias_aprofundamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setreferencias_aprofundamentoNull() {
+                this[this.tablepdf.referencias_aprofundamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsprofessoresNull() {
+                return this.IsNull(this.tablepdf.professoresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetprofessoresNull() {
+                this[this.tablepdf.professoresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isreferencias_complementaresNull() {
+                return this.IsNull(this.tablepdf.referencias_complementaresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setreferencias_complementaresNull() {
+                this[this.tablepdf.referencias_complementaresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public PlanoEnsino_ProfessorRow[] GetPlanoEnsino_ProfessorRows() {
+                if ((this.Table.ChildRelations["FK_PLANO_PLANO1"] == null)) {
+                    return new PlanoEnsino_ProfessorRow[0];
+                }
+                else {
+                    return ((PlanoEnsino_ProfessorRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PLANO_PLANO1"])));
                 }
             }
         }
@@ -2913,6 +4187,40 @@ namespace Plano_ensino {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ProfessorRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class pdfRowChangeEvent : global::System.EventArgs {
+            
+            private pdfRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRowChangeEvent(pdfRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public pdfRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4961,6 +6269,224 @@ SELECT IdProfessor, nome FROM Professor WHERE (IdProfessor = @IdProfessor)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string nome, int Original_IdProfessor, string Original_nome) {
             return this.Update(Original_IdProfessor, nome, Original_IdProfessor, Original_nome);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class pdfTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public pdfTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "pdf";
+            tableMapping.ColumnMappings.Add("IdPlanoEnsino", "IdPlanoEnsino");
+            tableMapping.ColumnMappings.Add("ano", "ano");
+            tableMapping.ColumnMappings.Add("semestre_letivo", "semestre_letivo");
+            tableMapping.ColumnMappings.Add("colegiado", "colegiado");
+            tableMapping.ColumnMappings.Add("possibilidade_integracao", "possibilidade_integracao");
+            tableMapping.ColumnMappings.Add("avaliacao_curricular", "avaliacao_curricular");
+            tableMapping.ColumnMappings.Add("referencias_aprofundamento", "referencias_aprofundamento");
+            tableMapping.ColumnMappings.Add("conteudo_programado", "conteudo_programado");
+            tableMapping.ColumnMappings.Add("cronograma", "cronograma");
+            tableMapping.ColumnMappings.Add("estrategia_recuperacao", "estrategia_recuperacao");
+            tableMapping.ColumnMappings.Add("metodologia", "metodologia");
+            tableMapping.ColumnMappings.Add("codigo_componente_curricular", "codigo_componente_curricular");
+            tableMapping.ColumnMappings.Add("professores", "professores");
+            tableMapping.ColumnMappings.Add("nome", "nome");
+            tableMapping.ColumnMappings.Add("IdComponenteCurricular", "IdComponenteCurricular");
+            tableMapping.ColumnMappings.Add("semestre", "semestre");
+            tableMapping.ColumnMappings.Add("objetivo", "objetivo");
+            tableMapping.ColumnMappings.Add("modalidade_oferta", "modalidade_oferta");
+            tableMapping.ColumnMappings.Add("ementa", "ementa");
+            tableMapping.ColumnMappings.Add("referencias_basicas", "referencias_basicas");
+            tableMapping.ColumnMappings.Add("referencias_complementares", "referencias_complementares");
+            tableMapping.ColumnMappings.Add("hora_aula_distancia", "hora_aula_distancia");
+            tableMapping.ColumnMappings.Add("hora_aula_presencial", "hora_aula_presencial");
+            tableMapping.ColumnMappings.Add("hora_relogio_distancia", "hora_relogio_distancia");
+            tableMapping.ColumnMappings.Add("hora_relogio_presencial", "hora_relogio_presencial");
+            tableMapping.ColumnMappings.Add("codigo_curso", "codigo_curso");
+            tableMapping.ColumnMappings.Add("IdCurso", "IdCurso");
+            tableMapping.ColumnMappings.Add("IdPlano", "IdPlano");
+            tableMapping.ColumnMappings.Add("nomeComp", "nomeComp");
+            tableMapping.ColumnMappings.Add("nomeCurso", "nomeCurso");
+            tableMapping.ColumnMappings.Add("objetivoCurso", "objetivoCurso");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Plano_ensino.Properties.Settings.Default.BD_PlanoEnsinoConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        PlanoEnsino.IdPlanoEnsino, PlanoEnsino.ano, PlanoEnsino.semestre_le" +
+                "tivo, PlanoEnsino.colegiado, PlanoEnsino.possibilidade_integracao, PlanoEnsino.a" +
+                "valiacao_curricular, PlanoEnsino.referencias_aprofundamento, \r\n                 " +
+                "        PlanoEnsino.conteudo_programado, PlanoEnsino.cronograma, PlanoEnsino.est" +
+                "rategia_recuperacao, PlanoEnsino.metodologia, PlanoEnsino.codigo_componente_curr" +
+                "icular, PlanoEnsino.professores, PlanoEnsino.nome, \r\n                         Co" +
+                "mponenteCurricular.IdComponenteCurricular, ComponenteCurricular.nome AS nomeComp" +
+                ", ComponenteCurricular.semestre, ComponenteCurricular.objetivo, ComponenteCurric" +
+                "ular.modalidade_oferta, \r\n                         ComponenteCurricular.ementa, " +
+                "ComponenteCurricular.referencias_basicas, ComponenteCurricular.referencias_compl" +
+                "ementares, ComponenteCurricular.hora_aula_distancia, ComponenteCurricular.hora_a" +
+                "ula_presencial, \r\n                         ComponenteCurricular.hora_relogio_dis" +
+                "tancia, ComponenteCurricular.hora_relogio_presencial, ComponenteCurricular.codig" +
+                "o_curso, Curso.IdCurso, Curso.nome AS nomeCurso, Curso.objetivo AS objetivoCurso" +
+                ", \r\n                         PlanoEnsino.IdPlanoEnsino AS IdPlano\r\nFROM         " +
+                "   PlanoEnsino INNER JOIN\r\n                         ComponenteCurricular ON Plan" +
+                "oEnsino.codigo_componente_curricular = ComponenteCurricular.IdComponenteCurricul" +
+                "ar INNER JOIN\r\n                         Curso ON ComponenteCurricular.codigo_cur" +
+                "so = Curso.IdCurso\r\nWHERE        (PlanoEnsino.IdPlanoEnsino = @value)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@value", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdPlanoEnsino", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BD_PlanoEnsinoDataSet.pdfDataTable dataTable, int value) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(value));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BD_PlanoEnsinoDataSet.pdfDataTable GetData(int value) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(value));
+            BD_PlanoEnsinoDataSet.pdfDataTable dataTable = new BD_PlanoEnsinoDataSet.pdfDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

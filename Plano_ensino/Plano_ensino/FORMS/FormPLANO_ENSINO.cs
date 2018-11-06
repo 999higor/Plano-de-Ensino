@@ -45,7 +45,8 @@ namespace Plano_ensino.FORMS
         {
             if (string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
                 || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
-                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text))
+                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text)
+                || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -55,7 +56,7 @@ namespace Plano_ensino.FORMS
                 int resultado = 0;
                 resultado = Plano_EnsinoDAL.Inserir(Convert.ToInt32(tbANO.Text), Convert.ToInt16(tbSEMESTRE.Text),
                     tbCOLEGIADO.Text, tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
-                    tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue));
+                    tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), tbNOME.Text, tbPROFESSORES.Text);
 
                 if (resultado == 1)
                 {
@@ -83,6 +84,8 @@ namespace Plano_ensino.FORMS
             tbCRONOGRAMA.ResetText();
             tbRECUPERACAO.ResetText();
             tbMETODOLOGIA.ResetText();
+            tbPROFESSORES.ResetText();
+            tbNOME.ResetText();
 
         }
 
@@ -115,7 +118,9 @@ namespace Plano_ensino.FORMS
                 tbCRONOGRAMA.Text = dr["Cronograma"].ToString();
                 tbRECUPERACAO.Text = dr["Recuperação"].ToString();
                 tbMETODOLOGIA.Text = dr["Metodologia"].ToString();
-                
+                tbNOME.Text = dr["Nome"].ToString();
+                tbPROFESSORES.Text = dr["Professores"].ToString();
+
                 cbCOMP_CURRICULAR.SelectedValue = Convert.ToInt16(dr["ID - CP"].ToString());
             }
         }
@@ -126,7 +131,8 @@ namespace Plano_ensino.FORMS
             {
                 if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
                 || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
-                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text))
+                || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text) 
+                || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -136,7 +142,7 @@ namespace Plano_ensino.FORMS
                     int resultado = 0;
                     resultado = Plano_EnsinoDAL.Alterar(Convert.ToInt32(tbID.Text), Convert.ToInt32(tbANO.Text), Convert.ToInt16(tbSEMESTRE.Text),
                         tbCOLEGIADO.Text, tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
-                        tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue));
+                        tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), tbNOME.Text, tbPROFESSORES.Text);
 
                     if (resultado == 1)
                     {
