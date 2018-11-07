@@ -164,7 +164,7 @@
             this.cbCURSO.FormattingEnabled = true;
             this.cbCURSO.Location = new System.Drawing.Point(11, 432);
             this.cbCURSO.Name = "cbCURSO";
-            this.cbCURSO.Size = new System.Drawing.Size(447, 26);
+            this.cbCURSO.Size = new System.Drawing.Size(570, 26);
             this.cbCURSO.TabIndex = 11;
             // 
             // label1
@@ -352,6 +352,8 @@
             // 
             // tabela
             // 
+            this.tabela.AllowUserToAddRows = false;
+            this.tabela.AllowUserToDeleteRows = false;
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabela.Location = new System.Drawing.Point(638, 83);
             this.tabela.Name = "tabela";
@@ -431,6 +433,7 @@
             this.Name = "FormCOMP_CURRICULAR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Componente Currícular";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCOMP_CURRICULAR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).EndInit();
             this.panel1.ResumeLayout(false);

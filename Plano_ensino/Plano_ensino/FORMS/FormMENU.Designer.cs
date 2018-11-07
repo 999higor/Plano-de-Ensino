@@ -93,6 +93,7 @@
             // 
             // professorPlanoDeEnsinoToolStripMenuItem
             // 
+            this.professorPlanoDeEnsinoToolStripMenuItem.Enabled = false;
             this.professorPlanoDeEnsinoToolStripMenuItem.Name = "professorPlanoDeEnsinoToolStripMenuItem";
             this.professorPlanoDeEnsinoToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.professorPlanoDeEnsinoToolStripMenuItem.Text = "Professor Plano de Ensino";

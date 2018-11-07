@@ -86,7 +86,7 @@ namespace Plano_ensino.FORMS
                 {
 
                     int resultado = 0;
-                    resultado = ProfessorDAL.Alterar(Convert.ToInt16(tbIDPROFESSOR.Text), tbNOME.Text);
+                    resultado = ProfessorDAL.Alterar(Convert.ToInt32(tbIDPROFESSOR.Text), tbNOME.Text);
 
                     if (resultado == 1)
                     {

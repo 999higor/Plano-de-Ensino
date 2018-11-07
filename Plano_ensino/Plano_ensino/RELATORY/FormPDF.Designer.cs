@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pdfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD_PlanoEnsinoDataSet = new Plano_ensino.BD_PlanoEnsinoDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,7 +80,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(355, 38);
+            this.button1.Location = new System.Drawing.Point(534, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(198, 28);
             this.button1.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.comboPlano.FormattingEnabled = true;
             this.comboPlano.Location = new System.Drawing.Point(12, 38);
             this.comboPlano.Name = "comboPlano";
-            this.comboPlano.Size = new System.Drawing.Size(294, 28);
+            this.comboPlano.Size = new System.Drawing.Size(490, 28);
             this.comboPlano.TabIndex = 2;
             this.comboPlano.ValueMember = "IdPlanoEnsino";
             // 
@@ -112,9 +112,9 @@
             // 
             this.reportViewer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "dt_ALL";
-            reportDataSource3.Value = this.pdfBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "dt_ALL";
+            reportDataSource1.Value = this.pdfBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Plano_ensino.RELATORY.PDF_teste.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -171,6 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormPDF";
             this.Text = "FormPDF";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPDF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pdfBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_PlanoEnsinoDataSet)).EndInit();

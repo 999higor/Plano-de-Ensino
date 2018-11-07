@@ -115,3 +115,4 @@ D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Pl
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.csproj.CopyComplete
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.exe
 D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.pdb
+D:\higor\Documents\GitHub\Plano-de-Ensino\Plano_ensino\Plano_ensino\obj\Debug\Plano_ensino.FORMS.FormLOGIN.resources

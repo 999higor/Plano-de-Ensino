@@ -333,11 +333,11 @@
             // 
             // cbCOMP_CURRICULAR
             // 
-            this.cbCOMP_CURRICULAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCOMP_CURRICULAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCOMP_CURRICULAR.FormattingEnabled = true;
             this.cbCOMP_CURRICULAR.Location = new System.Drawing.Point(7, 239);
             this.cbCOMP_CURRICULAR.Name = "cbCOMP_CURRICULAR";
-            this.cbCOMP_CURRICULAR.Size = new System.Drawing.Size(469, 24);
+            this.cbCOMP_CURRICULAR.Size = new System.Drawing.Size(576, 26);
             this.cbCOMP_CURRICULAR.TabIndex = 27;
             // 
             // label12
@@ -457,6 +457,7 @@
             this.Name = "FormPLANO_ENSINO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Plano de Ensino";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPLANO_ENSINO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).EndInit();
             this.panel1.ResumeLayout(false);
