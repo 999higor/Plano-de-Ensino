@@ -71,7 +71,7 @@ namespace Plano_ensino.DAL
             //texto com o comando que sera executado
             string cmd = "UPDATE PlanoEnsino " +
                 "SET ano = @ano, semestre_letivo = @semestre, colegiado = @colegiado, possibilidade_integracao = @possibilidade_integracao, avaliacao_curricular = @avaliacao_curricular, referencias_aprofundamento = @referencias_aprofundamento, " +
-                " conteudo_programado = @conteudo_programado, cronograma = @cronograma, estrategia_recuperacao = @estrategia_recuperacao, metodologia = @metodologia, codigo_componente_curricular = @codigo_componente_curricular, @nome = nome, @professores = professores WHERE IdPlanoEnsino = @IdPlanoEnsino";
+                " conteudo_programado = @conteudo_programado, cronograma = @cronograma, estrategia_recuperacao = @estrategia_recuperacao, metodologia = @metodologia, codigo_componente_curricular = @codigo_componente_curricular, nome = @nome, professores = @professores WHERE IdPlanoEnsino = @IdPlanoEnsino";
             int res = 0;
 
             // objeto que fara a conexao
@@ -156,10 +156,10 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.colegiado AS Colegiado, " +
+            string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.professores AS Professores, PlanoEnsino.colegiado AS Colegiado, " +
                 " PlanoEnsino.possibilidade_integracao AS Integração, PlanoEnsino.avaliacao_curricular AS Avaliação, " +
                 " PlanoEnsino.referencias_aprofundamento AS [Ref - Aprofundamento], PlanoEnsino.conteudo_programado AS Conteúdo, PlanoEnsino.cronograma AS Cronograma, " +
-                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome, PlanoEnsino.professores AS Professores " +
+                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome " +
                 " FROM PlanoEnsino INNER JOIN "+
                 " ComponenteCurricular ON PlanoEnsino.codigo_componente_curricular = ComponenteCurricular.IdComponenteCurricular";
                 
@@ -193,23 +193,45 @@ namespace Plano_ensino.DAL
             return dataSet;
         }
 
-        public static DataSet Pesquisar(String texto)
+        public static DataSet Pesquisar(string nome, string prof, string ano)
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.colegiado AS Colegiado, " +
+            string cmd = "SELECT PlanoEnsino.IdPlanoEnsino AS ID, PlanoEnsino.ano AS Ano, PlanoEnsino.semestre_letivo AS Semestre, ComponenteCurricular.nome AS Componente, PlanoEnsino.professores AS Professores, PlanoEnsino.colegiado AS Colegiado, " +
                 " PlanoEnsino.possibilidade_integracao AS Integração, PlanoEnsino.avaliacao_curricular AS Avaliação, " +
                 " PlanoEnsino.referencias_aprofundamento AS [Ref - Aprofundamento], PlanoEnsino.conteudo_programado AS Conteúdo, PlanoEnsino.cronograma AS Cronograma, " +
-                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome, PlanoEnsino.professores AS Professores " +
+                " PlanoEnsino.estrategia_recuperacao AS Recuperação, PlanoEnsino.metodologia AS Metodologia, PlanoEnsino.codigo_componente_curricular AS[ID - CP], PlanoEnsino.nome AS Nome " +
                 " FROM PlanoEnsino INNER JOIN " +
                 " ComponenteCurricular ON PlanoEnsino.codigo_componente_curricular = ComponenteCurricular.IdComponenteCurricular " +
-                " WHERE(PlanoEnsino.nome LIKE @texto)";
+                " WHERE 1=1 ";
+
+            string cmd2= " ";
+            string cmd3 = " ";
+            string cmd4 = " ";
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                 cmd2 = " AND (ComponenteCurricular.nome LIKE @nome) ";
+            }
+
+            if (!string.IsNullOrEmpty(prof))
+            {
+                cmd3 = " AND (PlanoEnsino.professores LIKE @prof) ";
+            }
+            if (ano != null)
+            {
+                cmd4 = " AND (PlanoEnsino.ano LIKE @ano) ";
+            }
+
+            string cmd10 = string.Concat(cmd, cmd2, cmd3, cmd4);
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
             //objeto que ira executar o comando sql
-            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+            SqlCommand sqlcmd = new SqlCommand(cmd10, conn);
 
-            sqlcmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+            sqlcmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+            sqlcmd.Parameters.AddWithValue("@prof", "%" + prof + "%");
+            sqlcmd.Parameters.AddWithValue("@ano", "%" + ano + "%");
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = sqlcmd;

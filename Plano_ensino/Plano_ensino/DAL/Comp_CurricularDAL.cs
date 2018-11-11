@@ -151,10 +151,14 @@ namespace Plano_ensino.DAL
         public static DataSet atualizaTabela()
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT IdComponenteCurricular AS ID, nome AS Nome, semestre AS Semestre, objetivo AS Objetivo, modalidade_oferta AS Oferta, ementa AS Ementa, referencias_basicas AS[Ref - Básicas], " +
-                        " referencias_complementares AS[Ref - Complementares], hora_aula_distancia AS[HA - Distância], hora_aula_presencial AS[HA - Presencial], " +
-                        " hora_relogio_distancia AS[HR - Distância], hora_relogio_presencial AS[HR - Presencial], codigo_curso AS Curso " +
-                        " FROM ComponenteCurricular";
+            string cmd = "SELECT ComponenteCurricular.IdComponenteCurricular AS ID, ComponenteCurricular.nome AS Nome, ComponenteCurricular.semestre AS Semestre," +
+                        " Curso.nome AS Curso, ComponenteCurricular.objetivo AS Objetivo, ComponenteCurricular.modalidade_oferta AS Oferta, ComponenteCurricular.ementa AS Ementa," +
+                        " ComponenteCurricular.referencias_basicas AS[Ref - Básicas], ComponenteCurricular.referencias_complementares AS[Ref - Complementares]," +
+                        " ComponenteCurricular.hora_aula_distancia AS[HA - Distância], ComponenteCurricular.hora_aula_presencial AS[HA - Presencial], " +
+                        " ComponenteCurricular.hora_relogio_distancia AS[HR - Distância], ComponenteCurricular.hora_relogio_presencial AS[HR - Presencial]," +
+                        " ComponenteCurricular.codigo_curso AS [ID - Curso] " +
+                        " FROM ComponenteCurricular INNER JOIN " +
+                        " Curso ON ComponenteCurricular.codigo_curso = Curso.IdCurso";
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
@@ -184,21 +188,42 @@ namespace Plano_ensino.DAL
             return dataSet;
         }
 
-        public static DataSet Pesquisar(String texto)
+        public static DataSet Pesquisar(string comp, string curso)
         {
             //texto com o comando sql que sera executado
-            string cmd = "SELECT IdComponenteCurricular AS ID, nome AS Nome, semestre AS Semestre, objetivo AS Objetivo, modalidade_oferta AS Oferta, ementa AS Ementa, referencias_basicas AS [Ref-Básicas], "+
-                        " referencias_complementares AS[Ref - Complementares], hora_aula_distancia AS[HA - Distância], hora_aula_presencial AS[HA - Presencial], "+
-                        " hora_relogio_distancia AS[HR - Distância], hora_relogio_presencial AS[HR - Presencial], codigo_curso AS Curso "+
-                        " FROM ComponenteCurricular "+
-                        " WHERE(nome LIKE @texto)";
+            string cmd = "SELECT ComponenteCurricular.IdComponenteCurricular AS ID, ComponenteCurricular.nome AS Nome, ComponenteCurricular.semestre AS Semestre," +
+                        " Curso.nome AS Curso, ComponenteCurricular.objetivo AS Objetivo, ComponenteCurricular.modalidade_oferta AS Oferta, ComponenteCurricular.ementa AS Ementa," +
+                        " ComponenteCurricular.referencias_basicas AS[Ref - Básicas], ComponenteCurricular.referencias_complementares AS[Ref - Complementares]," +
+                        " ComponenteCurricular.hora_aula_distancia AS[HA - Distância], ComponenteCurricular.hora_aula_presencial AS[HA - Presencial], " +
+                        " ComponenteCurricular.hora_relogio_distancia AS[HR - Distância], ComponenteCurricular.hora_relogio_presencial AS[HR - Presencial]," +
+                        " ComponenteCurricular.codigo_curso AS [ID - Curso] " +
+                        " FROM ComponenteCurricular INNER JOIN " +
+                        " Curso ON ComponenteCurricular.codigo_curso = Curso.IdCurso " +
+                        " WHERE 1=1 ";
+
+            string cmd2 = " ";
+            string cmd3 = " ";
+            
+
+            if (!string.IsNullOrEmpty(comp))
+            {
+                cmd2 = " AND (ComponenteCurricular.nome LIKE @comp) ";
+            }
+
+            if (!string.IsNullOrEmpty(curso))
+            {
+                cmd3 = " AND (Curso.nome LIKE @curso) ";
+            }
+
+            string cmd10 = string.Concat(cmd, cmd2, cmd3);
 
             //objeto que ira fazer a conexao
             SqlConnection conn = new SqlConnection(strConnection);
             //objeto que ira executar o comando sql
-            SqlCommand sqlcmd = new SqlCommand(cmd, conn);
+            SqlCommand sqlcmd = new SqlCommand(cmd10, conn);
 
-            sqlcmd.Parameters.AddWithValue("@texto", "%" + texto + "%");
+            sqlcmd.Parameters.AddWithValue("@comp", "%" + comp + "%");
+            sqlcmd.Parameters.AddWithValue("@curso", "%" + curso + "%");
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = sqlcmd;

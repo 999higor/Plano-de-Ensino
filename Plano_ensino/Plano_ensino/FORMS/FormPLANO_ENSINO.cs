@@ -22,6 +22,10 @@ namespace Plano_ensino.FORMS
         {
             this.carrega_tabela();
             this.carrega_combo();
+
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
         }
 
         private void carrega_tabela()
@@ -43,20 +47,20 @@ namespace Plano_ensino.FORMS
 
         private void btSALVAR_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
+            if (string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text)
                 || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
                 || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text)
-                || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text))
+                /*|| string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text)*/)
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-
+                string nome = string.Concat(cbCOMP_CURRICULAR.Text," - " ,tbPROFESSORES.Text," - ", tbANO.Text);
                 int resultado = 0;
                 resultado = Plano_EnsinoDAL.Inserir(Convert.ToInt32(tbANO.Text), Convert.ToInt16(tbSEMESTRE.Text),
-                    tbCOLEGIADO.Text, tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
-                    tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), tbNOME.Text, tbPROFESSORES.Text);
+                   Convert.ToString(cbCOLEGIADO.Text), tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
+                    tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), nome, tbPROFESSORES.Text);
 
                 if (resultado == 1)
                 {
@@ -76,7 +80,7 @@ namespace Plano_ensino.FORMS
             tbID.ResetText();
             tbANO.ResetText();
             tbSEMESTRE.ResetText();
-            tbCOLEGIADO.ResetText();
+            //tbCOLEGIADO.ResetText();
             tbINTEGRACAO.ResetText();
             tbAVALIACAO.ResetText();
             tbREF_APROFUNDAMENTO.ResetText();
@@ -85,7 +89,11 @@ namespace Plano_ensino.FORMS
             tbRECUPERACAO.ResetText();
             tbMETODOLOGIA.ResetText();
             tbPROFESSORES.ResetText();
-            tbNOME.ResetText();
+            //tbNOME.ResetText();
+
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
 
         }
 
@@ -111,17 +119,23 @@ namespace Plano_ensino.FORMS
                 tbID.Text = dr["ID"].ToString();
                 tbANO.Text = dr["Ano"].ToString();
                 tbSEMESTRE.Text = dr["Semestre"].ToString();
-                tbCOLEGIADO.Text = dr["Colegiado"].ToString();
+               // tbCOLEGIADO.Text = dr["Colegiado"].ToString();
                 tbINTEGRACAO.Text = dr["Integração"].ToString();
                 tbAVALIACAO.Text = dr["Avaliação"].ToString();
                 tbREF_APROFUNDAMENTO.Text = dr["Ref - Aprofundamento"].ToString();
                 tbCRONOGRAMA.Text = dr["Cronograma"].ToString();
                 tbRECUPERACAO.Text = dr["Recuperação"].ToString();
                 tbMETODOLOGIA.Text = dr["Metodologia"].ToString();
-                tbNOME.Text = dr["Nome"].ToString();
+                tbCONTEUDO_PROGRAMADO.Text = dr["Conteúdo"].ToString();
+                //tbNOME.Text = dr["Nome"].ToString();
                 tbPROFESSORES.Text = dr["Professores"].ToString();
 
-                cbCOMP_CURRICULAR.SelectedValue = Convert.ToInt16(dr["ID - CP"].ToString());
+                cbCOMP_CURRICULAR.SelectedValue = Convert.ToInt64(dr["ID - CP"].ToString());
+                cbCOLEGIADO.Text = Convert.ToString(dr["Colegiado"].ToString());
+
+                btALTERAR.Enabled = true;
+                btEXCLUIR.Enabled = true;
+                btSALVAR.Enabled = false;
             }
         }
 
@@ -129,20 +143,20 @@ namespace Plano_ensino.FORMS
         {
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbCOLEGIADO.Text)
+                if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbANO.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) /*|| string.IsNullOrEmpty(tbCOLEGIADO.Text)*/
                 || string.IsNullOrEmpty(tbINTEGRACAO.Text) || string.IsNullOrEmpty(tbAVALIACAO.Text) || string.IsNullOrEmpty(tbCONTEUDO_PROGRAMADO.Text)
                 || string.IsNullOrEmpty(tbCRONOGRAMA.Text) || string.IsNullOrEmpty(tbRECUPERACAO.Text) || string.IsNullOrEmpty(tbMETODOLOGIA.Text) 
-                || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text))
+                /*|| string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbPROFESSORES.Text)*/)
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-
+                    string nome = string.Concat(Convert.ToString(cbCOMP_CURRICULAR.Text), tbPROFESSORES.Text, tbANO.Text);
                     int resultado = 0;
                     resultado = Plano_EnsinoDAL.Alterar(Convert.ToInt32(tbID.Text), Convert.ToInt32(tbANO.Text), Convert.ToInt16(tbSEMESTRE.Text),
-                        tbCOLEGIADO.Text, tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
-                        tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), tbNOME.Text, tbPROFESSORES.Text);
+                        Convert.ToString(cbCOLEGIADO.Text), tbINTEGRACAO.Text, tbAVALIACAO.Text, tbREF_APROFUNDAMENTO.Text, tbCONTEUDO_PROGRAMADO.Text, tbCRONOGRAMA.Text,
+                        tbRECUPERACAO.Text, tbMETODOLOGIA.Text, Convert.ToInt16(cbCOMP_CURRICULAR.SelectedValue), nome, tbPROFESSORES.Text);
 
                     if (resultado == 1)
                     {
@@ -186,7 +200,7 @@ namespace Plano_ensino.FORMS
 
         private void atualizaPesquisa()
         {
-            DataSet ds = Plano_EnsinoDAL.Pesquisar(tbPESQUISA.Text);
+            DataSet ds = Plano_EnsinoDAL.Pesquisar(tbPesqNOME.Text, tbPesqPROF.Text, tbPesqANO.Text);
             tabela.DataSource = ds;
             tabela.DataMember = ds.Tables[0].TableName;
         }
@@ -194,6 +208,16 @@ namespace Plano_ensino.FORMS
         private void btPESQUISAR_Click(object sender, EventArgs e)
         {
             this.atualizaPesquisa();
+        }
+
+        private void btLIMPAR_Click(object sender, EventArgs e)
+        {
+            tbPesqANO.ResetText();
+            tbPesqNOME.ResetText();
+            tbPesqPROF.ResetText();
+            this.carrega_tabela();
+
+           
         }
     }
 }

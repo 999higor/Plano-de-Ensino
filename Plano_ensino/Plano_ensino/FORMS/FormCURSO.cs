@@ -47,6 +47,9 @@ namespace Plano_ensino.FORMS
             tbNOME.ResetText();
             tbOBJETIVO.ResetText();
             this.atualizaTabela();
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
         }
 
         private void btALTERAR_Click(object sender, EventArgs e)
@@ -118,6 +121,9 @@ namespace Plano_ensino.FORMS
         private void FormCURSO_Load(object sender, EventArgs e)
         {
             this.atualizaTabela();
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
         }
 
         private void btPESQUISAR_Click(object sender, EventArgs e)
@@ -147,7 +153,15 @@ namespace Plano_ensino.FORMS
                 tbIDCURSO.Text = dr["ID"].ToString();
                 tbNOME.Text = dr["Curso"].ToString();
                 tbOBJETIVO.Text = dr["Objetivo"].ToString();
+                btALTERAR.Enabled = true;
+                btEXCLUIR.Enabled = true;
+                btSALVAR.Enabled = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btPESQUISAR.ResetText();
         }
     }
 }

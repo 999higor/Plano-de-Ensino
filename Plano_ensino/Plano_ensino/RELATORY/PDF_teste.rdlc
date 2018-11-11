@@ -313,7 +313,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nome.Value</Value>
+                              <Value>=Fields!nomeCurso.Value</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                               </Style>
@@ -380,10 +380,10 @@
               <Width>4.21979cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.82021cm</Width>
+              <Width>0.62614cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>10.48222cm</Width>
+              <Width>10.72445cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -445,7 +445,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -534,7 +534,7 @@
         <Top>2.88521cm</Top>
         <Left>0.45862cm</Left>
         <Height>0.6cm</Height>
-        <Width>15.52222cm</Width>
+        <Width>15.57038cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -677,7 +677,13 @@
               <Width>4.77542cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>10.7468cm</Width>
+              <Width>5.72445cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -755,6 +761,93 @@
                         <LeftBorder>
                           <Style>None</Style>
                         </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Colegiado:</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="colegiado">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!colegiado.Value</Value>
+                              <Style>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>colegiado</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Style>None</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -771,6 +864,8 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
+            <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -784,7 +879,7 @@
         <Top>4.08521cm</Top>
         <Left>0.45862cm</Left>
         <Height>0.6cm</Height>
-        <Width>15.52222cm</Width>
+        <Width>15.49987cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -2645,7 +2740,7 @@
         <DataSetName>dt_ALL</DataSetName>
         <Top>80.80907cm</Top>
         <Left>0.43628cm</Left>
-        <Height>4.26916cm</Height>
+        <Height>4.26917cm</Height>
         <Width>15.52221cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
@@ -3022,7 +3117,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

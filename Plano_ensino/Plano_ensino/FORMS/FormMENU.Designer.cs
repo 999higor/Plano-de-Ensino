@@ -36,6 +36,7 @@
             this.planoDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorPlanoDeEnsinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planoDeEnsinoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,11 +102,20 @@
             // 
             // pDFToolStripMenuItem
             // 
+            this.pDFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.planoDeEnsinoToolStripMenuItem1});
             this.pDFToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(50, 25);
-            this.pDFToolStripMenuItem.Text = "PDF";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
+            this.pDFToolStripMenuItem.Text = "Gerar Relatório";
             this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
+            // 
+            // planoDeEnsinoToolStripMenuItem1
+            // 
+            this.planoDeEnsinoToolStripMenuItem1.Name = "planoDeEnsinoToolStripMenuItem1";
+            this.planoDeEnsinoToolStripMenuItem1.Size = new System.Drawing.Size(190, 26);
+            this.planoDeEnsinoToolStripMenuItem1.Text = "Plano de Ensino";
+            this.planoDeEnsinoToolStripMenuItem1.Click += new System.EventHandler(this.planoDeEnsinoToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -133,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem planoDeEnsinoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professorPlanoDeEnsinoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planoDeEnsinoToolStripMenuItem1;
     }
 }
 

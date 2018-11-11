@@ -80,7 +80,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(534, 38);
+            this.button1.Location = new System.Drawing.Point(751, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(198, 28);
             this.button1.TabIndex = 4;
@@ -90,12 +90,14 @@
             // 
             // comboPlano
             // 
+            this.comboPlano.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboPlano.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboPlano.DisplayMember = "IdPlanoEnsino";
             this.comboPlano.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPlano.FormattingEnabled = true;
             this.comboPlano.Location = new System.Drawing.Point(12, 38);
             this.comboPlano.Name = "comboPlano";
-            this.comboPlano.Size = new System.Drawing.Size(490, 28);
+            this.comboPlano.Size = new System.Drawing.Size(706, 28);
             this.comboPlano.TabIndex = 2;
             this.comboPlano.ValueMember = "IdPlanoEnsino";
             // 

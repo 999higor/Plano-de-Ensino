@@ -30,7 +30,6 @@
         {
             this.tbNOME = new System.Windows.Forms.TextBox();
             this.tbSEMESTRE = new System.Windows.Forms.TextBox();
-            this.tbMOD_OFERTA = new System.Windows.Forms.TextBox();
             this.tbOBJETIVO = new System.Windows.Forms.TextBox();
             this.tbEMENTA = new System.Windows.Forms.TextBox();
             this.tbREF_BASICA = new System.Windows.Forms.TextBox();
@@ -59,9 +58,14 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabela = new System.Windows.Forms.DataGridView();
-            this.tbPESQUISA = new System.Windows.Forms.TextBox();
+            this.tbPesqCOMP = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbMODALIDADE = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbPesqCURSO = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabela)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -81,14 +85,6 @@
             this.tbSEMESTRE.Name = "tbSEMESTRE";
             this.tbSEMESTRE.Size = new System.Drawing.Size(570, 24);
             this.tbSEMESTRE.TabIndex = 1;
-            // 
-            // tbMOD_OFERTA
-            // 
-            this.tbMOD_OFERTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMOD_OFERTA.Location = new System.Drawing.Point(11, 182);
-            this.tbMOD_OFERTA.Name = "tbMOD_OFERTA";
-            this.tbMOD_OFERTA.Size = new System.Drawing.Size(570, 24);
-            this.tbMOD_OFERTA.TabIndex = 2;
             // 
             // tbOBJETIVO
             // 
@@ -160,6 +156,8 @@
             // 
             // cbCURSO
             // 
+            this.cbCURSO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbCURSO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbCURSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCURSO.FormattingEnabled = true;
             this.cbCURSO.Location = new System.Drawing.Point(11, 432);
@@ -290,31 +288,31 @@
             // btSALVAR
             // 
             this.btSALVAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSALVAR.Location = new System.Drawing.Point(12, 581);
+            this.btSALVAR.Location = new System.Drawing.Point(11, 624);
             this.btSALVAR.Name = "btSALVAR";
-            this.btSALVAR.Size = new System.Drawing.Size(123, 30);
+            this.btSALVAR.Size = new System.Drawing.Size(123, 44);
             this.btSALVAR.TabIndex = 24;
-            this.btSALVAR.Text = "Salvar";
+            this.btSALVAR.Text = "Inserir";
             this.btSALVAR.UseVisualStyleBackColor = true;
             this.btSALVAR.Click += new System.EventHandler(this.btSALVAR_Click);
             // 
             // btNOVO
             // 
             this.btNOVO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNOVO.Location = new System.Drawing.Point(158, 581);
+            this.btNOVO.Location = new System.Drawing.Point(157, 624);
             this.btNOVO.Name = "btNOVO";
-            this.btNOVO.Size = new System.Drawing.Size(123, 30);
+            this.btNOVO.Size = new System.Drawing.Size(123, 44);
             this.btNOVO.TabIndex = 25;
-            this.btNOVO.Text = "Novo";
+            this.btNOVO.Text = "Limpar";
             this.btNOVO.UseVisualStyleBackColor = true;
             this.btNOVO.Click += new System.EventHandler(this.btNOVO_Click);
             // 
             // btALTERAR
             // 
             this.btALTERAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btALTERAR.Location = new System.Drawing.Point(312, 581);
+            this.btALTERAR.Location = new System.Drawing.Point(311, 624);
             this.btALTERAR.Name = "btALTERAR";
-            this.btALTERAR.Size = new System.Drawing.Size(123, 30);
+            this.btALTERAR.Size = new System.Drawing.Size(123, 44);
             this.btALTERAR.TabIndex = 26;
             this.btALTERAR.Text = "Alterar";
             this.btALTERAR.UseVisualStyleBackColor = true;
@@ -323,9 +321,9 @@
             // btEXCLUIR
             // 
             this.btEXCLUIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEXCLUIR.Location = new System.Drawing.Point(459, 581);
+            this.btEXCLUIR.Location = new System.Drawing.Point(458, 624);
             this.btEXCLUIR.Name = "btEXCLUIR";
-            this.btEXCLUIR.Size = new System.Drawing.Size(123, 30);
+            this.btEXCLUIR.Size = new System.Drawing.Size(123, 44);
             this.btEXCLUIR.TabIndex = 27;
             this.btEXCLUIR.Text = "Excluir";
             this.btEXCLUIR.UseVisualStyleBackColor = true;
@@ -355,7 +353,7 @@
             this.tabela.AllowUserToAddRows = false;
             this.tabela.AllowUserToDeleteRows = false;
             this.tabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabela.Location = new System.Drawing.Point(638, 83);
+            this.tabela.Location = new System.Drawing.Point(638, 118);
             this.tabela.Name = "tabela";
             this.tabela.ReadOnly = true;
             this.tabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -363,22 +361,22 @@
             this.tabela.TabIndex = 30;
             this.tabela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelecionarTabela);
             // 
-            // tbPESQUISA
+            // tbPesqCOMP
             // 
-            this.tbPESQUISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPESQUISA.Location = new System.Drawing.Point(638, 32);
-            this.tbPESQUISA.Name = "tbPESQUISA";
-            this.tbPESQUISA.Size = new System.Drawing.Size(486, 24);
-            this.tbPESQUISA.TabIndex = 31;
+            this.tbPesqCOMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPesqCOMP.Location = new System.Drawing.Point(638, 38);
+            this.tbPesqCOMP.Name = "tbPesqCOMP";
+            this.tbPesqCOMP.Size = new System.Drawing.Size(486, 24);
+            this.tbPesqCOMP.TabIndex = 31;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1146, 26);
+            this.button1.Location = new System.Drawing.Point(1146, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 36);
+            this.button1.Size = new System.Drawing.Size(181, 47);
             this.button1.TabIndex = 32;
-            this.button1.Text = "PESQUISAR";
+            this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -386,6 +384,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.cbMODALIDADE);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.tbID);
             this.panel1.Controls.Add(this.label12);
@@ -409,7 +408,6 @@
             this.panel1.Controls.Add(this.tbREF_COMPLEMENTAR);
             this.panel1.Controls.Add(this.tbREF_BASICA);
             this.panel1.Controls.Add(this.tbOBJETIVO);
-            this.panel1.Controls.Add(this.tbMOD_OFERTA);
             this.panel1.Controls.Add(this.tbSEMESTRE);
             this.panel1.Controls.Add(this.tbNOME);
             this.panel1.Location = new System.Drawing.Point(1, 0);
@@ -417,14 +415,70 @@
             this.panel1.Size = new System.Drawing.Size(631, 575);
             this.panel1.TabIndex = 33;
             // 
+            // cbMODALIDADE
+            // 
+            this.cbMODALIDADE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMODALIDADE.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMODALIDADE.FormattingEnabled = true;
+            this.cbMODALIDADE.Items.AddRange(new object[] {
+            "Presencial",
+            "À Distância"});
+            this.cbMODALIDADE.Location = new System.Drawing.Point(11, 182);
+            this.cbMODALIDADE.Name = "cbMODALIDADE";
+            this.cbMODALIDADE.Size = new System.Drawing.Size(379, 26);
+            this.cbMODALIDADE.TabIndex = 34;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(638, 15);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(222, 20);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Nome Componente Curricular ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(638, 65);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 20);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Curso";
+            // 
+            // tbPesqCURSO
+            // 
+            this.tbPesqCURSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPesqCURSO.Location = new System.Drawing.Point(638, 88);
+            this.tbPesqCURSO.Name = "tbPesqCURSO";
+            this.tbPesqCURSO.Size = new System.Drawing.Size(486, 24);
+            this.tbPesqCURSO.TabIndex = 36;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1146, 80);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(181, 32);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Limpar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormCOMP_CURRICULAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1339, 629);
+            this.ClientSize = new System.Drawing.Size(1339, 696);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.tbPesqCURSO);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbPESQUISA);
+            this.Controls.Add(this.tbPesqCOMP);
             this.Controls.Add(this.tabela);
             this.Controls.Add(this.btEXCLUIR);
             this.Controls.Add(this.btALTERAR);
@@ -447,7 +501,6 @@
 
         private System.Windows.Forms.TextBox tbNOME;
         private System.Windows.Forms.TextBox tbSEMESTRE;
-        private System.Windows.Forms.TextBox tbMOD_OFERTA;
         private System.Windows.Forms.TextBox tbOBJETIVO;
         private System.Windows.Forms.TextBox tbEMENTA;
         private System.Windows.Forms.TextBox tbREF_BASICA;
@@ -476,8 +529,13 @@
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView tabela;
-        private System.Windows.Forms.TextBox tbPESQUISA;
+        private System.Windows.Forms.TextBox tbPesqCOMP;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbMODALIDADE;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbPesqCURSO;
+        private System.Windows.Forms.Button button2;
     }
 }

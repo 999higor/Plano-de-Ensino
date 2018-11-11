@@ -21,7 +21,7 @@ namespace Plano_ensino.FORMS
         private void btSALVAR_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text)
-                || string.IsNullOrEmpty(tbMOD_OFERTA.Text) || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
+                /*|| string.IsNullOrEmpty(tbMOD_OFERTA.Text)*/ || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
                 || string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) || string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) || string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) || string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
             {
                 MessageBox.Show(" Verifique campos em Branco !", "Falha ao Inserir !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -30,7 +30,7 @@ namespace Plano_ensino.FORMS
             {
                 int resultado = 0;
                 resultado = Comp_CurricularDAL.Inserir(tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
-                    tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
+                    tbOBJETIVO.Text, Convert.ToString(cbMODALIDADE.Text), tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
                     Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text),
                     Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
 
@@ -67,6 +67,10 @@ namespace Plano_ensino.FORMS
         {
             this.carrega_combo();
             this.carrega_tabela();
+
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
         }
 
         private void btNOVO_Click(object sender, EventArgs e)
@@ -77,12 +81,16 @@ namespace Plano_ensino.FORMS
             tbREF_BASICA.ResetText();
             tbREF_COMPLEMENTAR.ResetText();
             tbSEMESTRE.ResetText();
-            tbMOD_OFERTA.ResetText();
+            //tbMOD_OFERTA.ResetText();
             tbEMENTA.ResetText();
             tbHRA_DISTANCIA.ResetText();
             tbHRA_PRESENCIAL.ResetText();
             tbHRR_DISTANCIA.ResetText();
             tb_HRR_PRESENCIAL.ResetText();
+
+            btALTERAR.Enabled = false;
+            btEXCLUIR.Enabled = false;
+            btSALVAR.Enabled = true;
         }
 
         private void btALTERAR_Click(object sender, EventArgs e)
@@ -90,7 +98,7 @@ namespace Plano_ensino.FORMS
             if (MessageBox.Show("Tem certeza que deseja Alterar esse Registro ?", "Aviso de Alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 if (string.IsNullOrEmpty(tbID.Text) || string.IsNullOrEmpty(tbNOME.Text) || string.IsNullOrEmpty(tbSEMESTRE.Text) || string.IsNullOrEmpty(tbOBJETIVO.Text)
-                || string.IsNullOrEmpty(tbMOD_OFERTA.Text) || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
+                /*|| string.IsNullOrEmpty(tbMOD_OFERTA.Text)*/ || string.IsNullOrEmpty(tbEMENTA.Text) || string.IsNullOrEmpty(tbREF_BASICA.Text)
                 || string.IsNullOrEmpty(tbHRA_DISTANCIA.Text) || string.IsNullOrEmpty(tbHRA_PRESENCIAL.Text) || string.IsNullOrEmpty(tbHRR_DISTANCIA.Text) || string.IsNullOrEmpty(tb_HRR_PRESENCIAL.Text))
                 {
                     MessageBox.Show(" Verifique campos em Branco !", "Falha ao Alterar !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -99,7 +107,7 @@ namespace Plano_ensino.FORMS
                 {
                     int resultado = 0;
                     resultado = Comp_CurricularDAL.Alterar(Convert.ToInt32(tbID.Text), tbNOME.Text, Convert.ToInt16(tbSEMESTRE.Text),
-                        tbOBJETIVO.Text, tbMOD_OFERTA.Text, tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
+                        tbOBJETIVO.Text, Convert.ToString(cbMODALIDADE.Text), tbEMENTA.Text, tbREF_BASICA.Text, tbREF_COMPLEMENTAR.Text, Convert.ToInt16(tbHRA_DISTANCIA.Text),
                         Convert.ToInt16(tbHRA_PRESENCIAL.Text), Convert.ToInt16(tbHRR_DISTANCIA.Text),
                         Convert.ToInt16(tb_HRR_PRESENCIAL.Text), Convert.ToInt16(cbCURSO.SelectedValue));
 
@@ -166,7 +174,7 @@ namespace Plano_ensino.FORMS
                 tbNOME.Text = dr["Nome"].ToString();
                 tbOBJETIVO.Text = dr["Objetivo"].ToString();
                 tbSEMESTRE.Text = dr["Semestre"].ToString();
-                tbMOD_OFERTA.Text = dr["Oferta"].ToString();
+               // tbMOD_OFERTA.Text = dr["Oferta"].ToString();
                 tbEMENTA.Text = dr["Ementa"].ToString();
                 tbREF_COMPLEMENTAR.Text = dr["Ref - Complementares"].ToString();
                 tbREF_BASICA.Text = dr["Ref - Básicas"].ToString();
@@ -174,17 +182,18 @@ namespace Plano_ensino.FORMS
                 tbHRA_PRESENCIAL.Text = dr["HA - Presencial"].ToString();
                 tbHRR_DISTANCIA.Text = dr["HR - Distância"].ToString();
                 tb_HRR_PRESENCIAL.Text = dr["HR - Presencial"].ToString();
-                cbCURSO.SelectedValue = Convert.ToInt16(dr["Curso"].ToString());
-            }
-            else
-            {
+                cbCURSO.SelectedValue = Convert.ToInt32(dr["ID - Curso"].ToString());
 
+                cbMODALIDADE.Text = Convert.ToString(dr["Oferta"].ToString());
+                btALTERAR.Enabled = true;
+                btEXCLUIR.Enabled = true;
+                btSALVAR.Enabled = false;
             }
         }
 
         private void atualizaPesquisa()
         {
-            DataSet ds = Comp_CurricularDAL.Pesquisar(tbPESQUISA.Text);
+            DataSet ds = Comp_CurricularDAL.Pesquisar(tbPesqCOMP.Text, tbPesqCURSO.Text);
             tabela.DataSource = ds;
             tabela.DataMember = ds.Tables[0].TableName;
         }
@@ -192,6 +201,12 @@ namespace Plano_ensino.FORMS
         private void button1_Click(object sender, EventArgs e)
         {
             this.atualizaPesquisa();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tbPesqCOMP.ResetText();
+            tbPesqCURSO.ResetText();
         }
     }
 }
