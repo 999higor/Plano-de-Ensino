@@ -54,5 +54,35 @@ namespace Plano_ensino
         {
             new FormPDF().ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCursos_Click(object sender, EventArgs e)
+        {
+            new FormCURSO().ShowDialog();
+        }
+
+        private void btComp_Click(object sender, EventArgs e)
+        {
+            new FormCOMP_CURRICULAR().ShowDialog();
+        }
+
+        private void btPlano_Click(object sender, EventArgs e)
+        {
+            new FormPLANO_ENSINO().ShowDialog();
+        }
+
+        private void btProf_Click(object sender, EventArgs e)
+        {
+            new FormPROFESSOR_PLANO().ShowDialog();
+        }
+
+        private void btGerar_Click(object sender, EventArgs e)
+        {
+            new FormPDF().ShowDialog();
+        }
     }
 }

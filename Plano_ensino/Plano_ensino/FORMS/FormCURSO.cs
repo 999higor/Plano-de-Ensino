@@ -161,7 +161,7 @@ namespace Plano_ensino.FORMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            btPESQUISAR.ResetText();
+            tbPESQUISA.ResetText();
         }
     }
 }
